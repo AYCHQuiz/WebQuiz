@@ -1,0 +1,18 @@
+{
+  "name": "web-quiz",
+  "version": "0.1.0",
+  "description": "Mobile-first web quiz",
+  "author": "Hans Kirchner <h.kirchner@tum.de>",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "escape-html": "^1.0.3",
+    "mathjax-node": "^0.5.1",
+    "mustache": "^2.3.0",
+    "yamljs": "^0.2.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tum-rt/web-quiz.git"
+  }
+}
