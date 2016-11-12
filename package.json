@@ -5,6 +5,7 @@
   "author": "Hans Kirchner <h.kirchner@tum.de>",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "argparse": "^1.0.9",
     "bluebird": "^3.4.6",
     "escape-html": "^1.0.3",
     "mathjax-node": "^0.5.1",
