@@ -11,7 +11,7 @@ function main() {
     const renderFile = require("./lib/render.js").renderFile; // lazy-load
 
     renderFile(args[0]).then(html => {
-        console.log(html);
+        console.log(JSON.stringify(html));
     }).catch(error =>  {
         console.error(error);
         process.exit(1);
