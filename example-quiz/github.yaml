@@ -1,0 +1,31 @@
+uid: github
+tags: []
+content:
+- text: Every developer knows GitHub. But how much do you know about it?
+- text: What is the programming language with most active repositories?
+- task_mc_one_correct:
+    correct_answer:
+    - JavaScript
+    wrong_answers:
+    - Java
+    - Python
+    - C++
+- text: >
+    Roughly 20% of all projects on GitHub include a LICENSE file.
+    What is the most used license?
+- hint: 45% of all projects having a license use this license.
+- task_mc_one_correct:
+    correct_answer:
+    - MIT
+    wrong_answers:
+    - GPLv2
+    - Apache
+    - BSD 3-clause
+- text: What is the repository with the most forks on GitHub?
+- task_mc_one_correct:
+    correct_answer:
+    - jtleek/datasharing
+    wrong_answers:
+    - twbs/bootstrap
+    - torvalds/linux
+    - daneden/animate.css

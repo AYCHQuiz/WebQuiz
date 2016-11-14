@@ -1,0 +1,25 @@
+uid: tesla
+tags: [automobile]
+content:
+- text: Tesla Motors is an upcoming automobile company building electric cars.
+- text: Where is Tesla's head quarter?
+- task_mc_one_correct:
+    correct_answer:
+    - Silicon Valley
+    wrong_answers:
+    - Detroit
+    - Las Vegas
+    - Manhattan
+- text: How much revenue did Tesla make in 2015?
+- task_number:
+    correct_answer: 4000
+    abs_tol: 100
+    after: million $
+- text: Who founded Tesla back in 2003?
+- task_mc_multiple_correct:
+    correct_answers:
+    - Martin Eberhard
+    - Marc Tarpenning
+    wrong_answers:
+    - Elon Musk
+    - Larry Page
