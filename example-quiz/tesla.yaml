@@ -2,7 +2,7 @@ uid: tesla
 tags: [automobile]
 content:
 - text: Tesla Motors is an upcoming automobile company building electric cars.
-- text: Where is Tesla's head quarter?
+- text: Where is Tesla's headquarters?
 - task_mc_one_correct:
     correct_answer:
     - Silicon Valley
