@@ -10,7 +10,11 @@
             </label>
         </div>
     </form>
-    <p>There are {{ numQuestions }} questions matching your interests.</p>
+    <p>
+        There {{ numQuestions == 1 ? 'is' : 'are' }}
+        {{ numQuestions }} {{ numQuestions == 1 ? 'question' : 'questions' }}
+        matching your interests.
+    </p>
     <button class="btn btn-primary btn-block" @click="startQuiz">Start quiz</button>
 </div>
 </template>
@@ -27,22 +31,26 @@ export default {
     methods: {
         startQuiz: function() {
             this.$emit('start', this.selectedTags.slice());
-        }
-    },
-    watch: {
-        selectedTags: function(newTags) {
+        },
+        updateCount: function(tags) {
             const req = new XMLHttpRequest();
             req.addEventListener("load", () => {
                 this.numQuestions = JSON.parse(req.responseText).count;
             });
-            req.open("GET", "/count_questions?tags=" + newTags.join("|"));
+            req.open("GET", "/count_questions?tags=" + tags.join("|"));
             req.send();
+        }
+    },
+    watch: {
+        selectedTags: function(newTags) {
+            this.updateCount(newTags);
         }
     },
     created: function() {
         const req = new XMLHttpRequest();
         req.addEventListener("load", () => {
             this.tags = JSON.parse(req.responseText);
+            this.updateCount([]);
         });
         req.open("GET", "/tags");
         req.send();

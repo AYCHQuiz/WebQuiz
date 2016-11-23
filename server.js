@@ -32,25 +32,21 @@ app.get("/tags", (req, res) => {
 });
 
 app.get("/count_questions", (req, res) => {
-    fs.readFileAsync(path.join(rootDir, "_index.json")).then(data => {
-        const json = JSON.parse(data);
-        const filterTags = req.query.tags ? req.query.tags.split("|") : [];
-        var counter = 0;
-        for(const question of json.questions) {
-            var hasAllTags = true;
-            console.log(question.tags, filterTags);
-            for(const tag of filterTags) {
-                if(!question.tags.includes(tag)) {
-                    hasAllTags = false;
-                    break;
-                }
-            }
-            if(hasAllTags) {
-                counter ++;
+    const filterTags = req.query.tags ? req.query.tags.split("|") : [];
+    var counter = 0;
+    for(const question of questions) {
+        var hasAllTags = true;
+        for(const tag of filterTags) {
+            if(!question.tags.includes(tag)) {
+                hasAllTags = false;
+                break;
             }
         }
-        res.json({count: counter});
-    });
+        if(hasAllTags) {
+            counter ++;
+        }
+    }
+    res.json({count: counter});
 });
 
 app.get("/api/quiz", (req, res) => {
