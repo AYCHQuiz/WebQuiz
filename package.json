@@ -4,16 +4,34 @@
   "description": "Mobile-first web quiz",
   "author": "Hans Kirchner <h.kirchner@tum.de>",
   "license": "BSD-3-Clause",
+  "scripts": {
+    "build": "webpack",
+    "buildp": "webpack -p",
+    "watch": "webpack --watch"
+  },
   "dependencies": {
     "argparse": "^1.0.9",
     "bluebird": "^3.4.6",
+    "css-loader": "^0.25.0",
     "escape-html": "^1.0.3",
+    "express": "^4.14.0",
     "mathjax-node": "^0.5.1",
+    "mkdirp": "^0.5.1",
     "mustache": "^2.3.0",
+    "spectre.css": "^0.1.27",
+    "ts-loader": "^1.2.1",
+    "typescript": "^2.0.9",
+    "vue": "^2.0.7",
+    "vue-loader": "^9.9.5",
+    "webpack": "^1.13.3",
     "yamljs": "^0.2.8"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/tum-rt/web-quiz.git"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "vue-ts-loader": "0.0.3"
   }
 }

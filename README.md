@@ -6,3 +6,15 @@
 * Plot and LaTeX rendering
 * Mobile-first, responsive web design
 * Lightweight question specification in YAML
+
+## Installation
+
+Requirements: Node.js >= 4.x
+
+```
+git clone https://github.com/tum-rt/web-quiz.git
+cd web-quiz
+npm install
+npm run build
+node server.js example-quiz
+```
