@@ -2,7 +2,7 @@
 <div class="container grid-480">
 <quiz-progress :total="questions.length" :current="currentQuestionIndex"></quiz-progress>
 <startpage v-on:start="start" v-show="showStartpage"></startpage>
-<question v-on:next="next" v-show="showQuestion" :content="currentQuestion"></question>
+<question v-on:next="next" v-if="showQuestion" :content="currentQuestion"></question>
 <evaluation v-show="showEvaluation"></evalution>
 </div>
 </template>
@@ -40,13 +40,20 @@ export default {
             req.send();
         },
         next: function() {
-            this.currentQuestionIndex ++;
-            if(this.currentQuestionIndex < this.questions.length) {
-                this.currentQuestion = this.questions[this.currentQuestionIndex];
-            } else {
-                this.showQuestion = false;
-                this.showEvaluation = true;
-            }
+            // HACK: force rendering on Question component
+            // first: destroy old component (via v-if)
+            this.showQuestion = false;
+
+            this.$nextTick(() => { // second: wait one time slit
+                this.currentQuestionIndex ++;
+                if(this.currentQuestionIndex < this.questions.length) {
+                    this.currentQuestion = this.questions[this.currentQuestionIndex];
+                    this.showQuestion = true; // third: create new component (via v-if)
+                } else {
+
+                    this.showEvaluation = true;
+                }
+            });
         }
     },
     components: {
