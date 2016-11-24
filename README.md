@@ -11,10 +11,20 @@
 
 Requirements: Node.js >= 4.x
 
-```
+```sh
 git clone https://github.com/tum-rt/web-quiz.git
 cd web-quiz
 npm install
 npm run build
 node server.js example-quiz
+```
+
+## Generating docs
+Install `apidoc` (globally):
+```sh
+npm install apidoc -g
+```
+Run it:
+```sh
+apidoc -i lib/ -o apidoc/
 ```
