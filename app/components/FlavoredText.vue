@@ -20,7 +20,6 @@ export default {
         const text = "" + this.value;
         let lastIndex = 0;
         let insideMath = false;
-        let partials = [];
         let index;
         while((index = text.indexOf("$", lastIndex)) != -1) {
             const part = text.substring(lastIndex, index);
@@ -38,7 +37,7 @@ export default {
     },
     methods: {
         buildUrl: function(math) {
-            return "/api/math?tex=" + encodeURIComponent(math);
+            return "/api/math/tex/svg?input=" + encodeURIComponent(math);
         }
     }
 }

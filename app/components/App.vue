@@ -30,7 +30,7 @@ export default {
         start: function(tags) {
             const req = new XMLHttpRequest();
             req.addEventListener("load", () => {
-                this.questions = JSON.parse(req.responseText);
+                this.questions = JSON.parse(req.responseText).data;
                 localStorage.setItem("quiz", req.responseText);
                 this.currentQuestion = this.questions[0];
                 this.showStartpage = false;

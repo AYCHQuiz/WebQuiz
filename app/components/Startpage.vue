@@ -35,9 +35,9 @@ export default {
         updateCount: function(tags) {
             const req = new XMLHttpRequest();
             req.addEventListener("load", () => {
-                this.numQuestions = JSON.parse(req.responseText).count;
+                this.numQuestions = JSON.parse(req.responseText).data;
             });
-            req.open("GET", "/count_questions?tags=" + tags.join("|"));
+            req.open("GET", "/api/count_questions?tags=" + tags.join("|"));
             req.send();
         }
     },
@@ -49,10 +49,10 @@ export default {
     created: function() {
         const req = new XMLHttpRequest();
         req.addEventListener("load", () => {
-            this.tags = JSON.parse(req.responseText);
+            this.tags = JSON.parse(req.responseText).data;
             this.updateCount([]);
         });
-        req.open("GET", "/tags");
+        req.open("GET", "/api/tags");
         req.send();
     }
 }
