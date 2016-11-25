@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# Run test cases on all supported Node.js version
+# Run test cases on all supported Node.js versions
 # 1) Install nvm: https://github.com/creationix/nvm
 # 2) Install all node versions:
 # 2.1) nvm install 4
 # 2.2) nvm install 5
 # 2.3) nvm install 6
 # 2.4) nvm install 7
-# 3) run ./test-nvm.sh
+# 3) ./test-nvm.sh
 # 4) profit
 
 . "$HOME/.nvm/nvm.sh"  # This loads nvm
