@@ -1,6 +1,7 @@
 # `web-quiz`: a modern, mobile-first web quiz for STEM courses
 
 `dev`: [![Build Status](https://travis-ci.org/tum-rt/web-quiz.svg?branch=dev)](https://travis-ci.org/tum-rt/web-quiz)
+[![Dependencies](https://david-dm.org/tum-rt/web-quiz/dev.svg)](https://david-dm.org/tum-rt/web-quiz/dev)
 
 ## Features
 * Basic multiple choice questions (single answer and multiple answer)
