@@ -8,7 +8,8 @@
     "build": "webpack",
     "buildp": "webpack -p",
     "watch": "webpack --watch",
-    "doc": "apidoc -i lib/ -o apidoc/"
+    "doc": "apidoc -i lib/ -o apidoc/",
+    "test": "mocha test"
   },
   "dependencies": {
     "argparse": "^1.0.9",
@@ -32,8 +33,11 @@
     "url": "https://github.com/tum-rt/web-quiz.git"
   },
   "devDependencies": {
-    "apidoc": "^0.16.1",
     "@types/core-js": "^0.9.34",
+    "apidoc": "^0.16.1",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0",
     "vue-ts-loader": "0.0.3"
   }
 }

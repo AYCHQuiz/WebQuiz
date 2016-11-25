@@ -12,6 +12,12 @@ app.get("/spectre.css", (req, res) => {
 
 app.use(express.static("app"));
 
-app.listen(3000, function() {
-    console.log("web-quiz listening on port 3000");
-});
+const port = process.env.PORT || 3000;
+
+if(process.env.NODE_ENV !== "test") {
+    app.listen(port, function() {
+        console.log("web-quiz listening on port %d", port);
+    });
+}
+
+module.exports = app; // for testing
