@@ -1,11 +1,9 @@
 process.env.NODE_ENV = "test";
 
 const chai = require("chai");
-const chaiHttp = require("chai-http");
+chai.use(require("chai-http"));
 const expect = chai.expect;
 const app = require("../server.js");
-
-chai.use(chaiHttp);
 
 describe("server", () => {
     describe("GET /api/tags", () => {
@@ -77,7 +75,7 @@ describe("server", () => {
             .end((err, res) => {
                 expect(err).to.be.null;
                 expect(res).to.have.status(200);
-                expect(res).to.have.header("content-type", "image/svg+xml");
+                expect(res).to.have.header("content-type", /^image\/svg\+xml/);
                 expect(res.body.length).to.be.above(0);
                 done();
             });
