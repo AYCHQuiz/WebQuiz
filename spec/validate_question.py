@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Tested with Python 3.5
 
 import argparse
