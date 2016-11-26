@@ -17,7 +17,7 @@ export default {
     },
     created: function() {
         this.content = [];
-        const text = "" + this.value;
+        const text = typeof this.value === "undefined" ? "" : this.value;
         let lastIndex = 0;
         let insideMath = false;
         let index;

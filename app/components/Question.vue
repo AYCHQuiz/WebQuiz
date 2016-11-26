@@ -2,7 +2,6 @@
 <div>
     <header class="navbar">
         <section class="navbar-section">
-            <a href="#" class="btn btn-link">Web Quiz</a>
             <button href="#" class="btn float-right" @click="cancel">Cancel</button>
         </section>
     </header>
@@ -31,14 +30,10 @@ export default {
     },
     methods: {
         submit: function() {
-            this.answers = {};
-            this.$nextTick(() => {
-                this.$emit('next');
-            });
+            this.$emit('next', this.answers);
         },
         input: function(index, value) {
             this.answers[index] = value;
-            console.log(JSON.stringify(this.answers));
         },
         cancel: function() {
             this.$emit("cancel");
