@@ -10,12 +10,15 @@ sudo: false
 addons:
   apt:
     packages:
-      - python3
-      - python3-pip
+      - python
+      - python-pip
+      - python-virtualenv
 
 # Install prerequisites for the schema validation
 before_install:
-  - pip3 install -r ./spec/requirements.txt
+  - virtualenv pyvalidator
+  - source pyvalidator/bin/activate
+  - pip install -r ./spec/requirements.txt
 
 install:
   - npm install

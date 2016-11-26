@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-# Tested with Python 3.5
+# Tested with Python 2.7 and 3.5
 
+from __future__ import print_function
 import argparse
 import os
 import sys
