@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h3>Startpage</h3>
+    <h3>Start page</h3>
     <p>Select the topics you are interested in:</p>
     <form v-on:submit.prevent>
         <div class="form-group" v-for="tag in tags">

@@ -48,7 +48,7 @@ export default {
 
             this.mergeAnswers(answers);
 
-            this.$nextTick(() => { // second: wait one time slit
+            this.$nextTick(() => { // second: wait one time slot
                 this.currentQuestionIndex ++;
                 if(this.currentQuestionIndex < this.questions.length) {
                     this.currentQuestion = this.questions[this.currentQuestionIndex];
