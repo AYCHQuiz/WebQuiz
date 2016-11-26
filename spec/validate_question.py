@@ -10,7 +10,7 @@ import yamale
 
 def find_question_files(root_directory):
     """Yield all YAML files recursively."""
-    for root, dirs, files in os.walk(root_directory):
+    for root, _, files in os.walk(root_directory):
         for basename in filter(lambda s: s.endswith((".yaml", ".yml")), files):
             yield os.path.join(root, basename)
 
