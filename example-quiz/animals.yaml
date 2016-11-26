@@ -1,0 +1,43 @@
+uid: animals
+tags: [animals]
+content:
+- header1: How good do you know animals?
+- image: https://syncandshare.lrz.de/dl/fi4KvLNE2142swgfxjtEUCta/golden_retriever.jpg
+- text: This is a...
+- task_mc_one_correct:
+    correct_answer:
+    - Golden Retriever
+    wrong_answers:
+    - Poodle
+    - Siberian Husky
+    - Scotch Collie
+- image: https://syncandshare.lrz.de/dl/fiDpxA7oU6XqhTFufgGhcgnm/meerkat.jpg
+- text: This is a...
+- task_mc_one_correct:
+    correct_answer:
+    - Meerkat
+    wrong_answers:
+    - Gopher
+    - Capybara
+    - Fennec
+    - Weasel
+    - Desert pocket mouse
+    - Hare
+- image: https://syncandshare.lrz.de/dl/fiCSc9QVE3zDUmYWLrJ7xYtL/orcas.jpg
+- text: These are...
+- task_mc_one_correct:
+    correct_answer:
+    - Orcas
+    wrong_answers:
+    - Dolphins
+    - Manatees
+    - Seals
+- image: https://syncandshare.lrz.de/dl/fiYCqQ2Mc8vAGKH9DnLzkrUb/penguins.jpg
+- text: These are...
+- task_mc_one_correct:
+    correct_answer:
+    - Emperor penguins
+    wrong_answers:
+    - Little penguins
+    - Gentoo penguins
+    - Humboldt penguins
