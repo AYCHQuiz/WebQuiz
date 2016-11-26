@@ -1,7 +1,9 @@
 # `web-quiz`: a modern, mobile-first web quiz for STEM courses
 
-`dev`: [![Build Status](https://travis-ci.org/tum-rt/web-quiz.svg?branch=dev)](https://travis-ci.org/tum-rt/web-quiz)
-[![Dependencies](https://david-dm.org/tum-rt/web-quiz/dev.svg)](https://david-dm.org/tum-rt/web-quiz/dev)
+[![Build Status](https://travis-ci.org/tum-rt/web-quiz.svg?branch=master)](https://travis-ci.org/tum-rt/web-quiz)
+[![dependencies Status](https://david-dm.org/tum-rt/web-quiz/status.svg)](https://david-dm.org/tum-rt/web-quiz)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e472f63f397543a584f70b427b5ef51d)](https://www.codacy.com/app/tum-rt/web-quiz?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tum-rt/web-quiz&amp;utm_campaign=Badge_Grade)
+[![Code Climate](https://codeclimate.com/github/tum-rt/web-quiz/badges/gpa.svg)](https://codeclimate.com/github/tum-rt/web-quiz)
 
 ## Features
 * Basic multiple choice questions (single answer and multiple answer)
