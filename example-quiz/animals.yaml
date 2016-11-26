@@ -1,8 +1,13 @@
+# Lesson learned: Always obfuscate filenames!
+
+# All images are CC0 (public domain)
+
 uid: animals
 tags: [animals]
 content:
 - header1: How good do you know animals?
 - image: https://syncandshare.lrz.de/dl/fi4KvLNE2142swgfxjtEUCta/golden_retriever.jpg
+  # https://pixabay.com/en/dog-golden-retriever-concerns-out-1192029/
 - text: This is a...
 - task_mc_one_correct:
     correct_answer:
@@ -12,6 +17,7 @@ content:
     - Siberian Husky
     - Scotch Collie
 - image: https://syncandshare.lrz.de/dl/fiDpxA7oU6XqhTFufgGhcgnm/meerkat.jpg
+  # https://pixabay.com/en/alert-animal-cute-fur-hair-look-165009/
 - text: This is a...
 - task_mc_one_correct:
     correct_answer:
@@ -24,6 +30,7 @@ content:
     - Desert pocket mouse
     - Hare
 - image: https://syncandshare.lrz.de/dl/fiCSc9QVE3zDUmYWLrJ7xYtL/orcas.jpg
+  # https://pixabay.com/en/killer-whales-orcas-breaching-591130/
 - text: These are...
 - task_mc_one_correct:
     correct_answer:
@@ -33,6 +40,7 @@ content:
     - Manatees
     - Seals
 - image: https://syncandshare.lrz.de/dl/fiYCqQ2Mc8vAGKH9DnLzkrUb/penguins.jpg
+  # https://pixabay.com/en/penguins-emperor-antarctic-life-429128/
 - text: These are...
 - task_mc_one_correct:
     correct_answer:
