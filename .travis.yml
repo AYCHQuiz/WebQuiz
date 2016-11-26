@@ -6,6 +6,19 @@ node_js:
 
 sudo: false
 
+# Install Python for schema validation
+addons:
+  apt:
+    packages:
+      - python3
+      - python3-pip
+
+# Install prerequisites for the schema validation
+before_install:
+  - pip3 install -r ./spec/requirements.txt
+
 install:
   - npm install
   - npm run build
+  - npm run doc
+  - python ./spec/validate_question.py "./spec/schema_static.yml" "./example-quiz/"
