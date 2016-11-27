@@ -1,4 +1,8 @@
 "use strict";
+
+// Disable ESLint warnings that are irrelevant for Node.js
+/* eslint-disable no-console */
+
 const express = require("express");
 const path = require("path");
 
