@@ -10,6 +10,7 @@ content:
     - Java
     - Python
     - C++
+- separator
 - text: >
     Roughly 20% of all projects on GitHub include a LICENSE file.
     What is the most used license?
@@ -21,6 +22,7 @@ content:
     - GPLv2
     - Apache
     - BSD 3-clause
+- separator
 - text: What is the repository with the most forks on GitHub?
 - task_mc_one_correct:
     correct_answer:

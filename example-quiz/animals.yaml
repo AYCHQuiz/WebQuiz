@@ -16,6 +16,7 @@ content:
     - Poodle
     - Siberian Husky
     - Scotch Collie
+- separator
 - image: https://syncandshare.lrz.de/dl/fiDpxA7oU6XqhTFufgGhcgnm/meerkat.jpg
   # https://pixabay.com/en/alert-animal-cute-fur-hair-look-165009/
 - text: This is a...
@@ -29,6 +30,7 @@ content:
     - Weasel
     - Desert pocket mouse
     - Hare
+- separator
 - image: https://syncandshare.lrz.de/dl/fiCSc9QVE3zDUmYWLrJ7xYtL/orcas.jpg
   # https://pixabay.com/en/killer-whales-orcas-breaching-591130/
 - text: These are...
@@ -39,6 +41,7 @@ content:
     - Dolphins
     - Manatees
     - Seals
+- separator
 - image: https://syncandshare.lrz.de/dl/fiYCqQ2Mc8vAGKH9DnLzkrUb/penguins.jpg
   # https://pixabay.com/en/penguins-emperor-antarctic-life-429128/
 - text: These are...

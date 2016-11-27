@@ -10,11 +10,13 @@ content:
     - Detroit
     - Las Vegas
     - Manhattan
+- separator
 - text: How much revenue did Tesla make in 2015?
 - task_number:
     correct_answer: 4000
     abs_tol: 100
     after: million $
+- separator
 - text: Who founded Tesla back in 2003?
 - task_mc_multiple_correct:
     correct_answers:

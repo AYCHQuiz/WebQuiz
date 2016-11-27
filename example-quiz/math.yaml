@@ -2,8 +2,8 @@ uid: math
 tags: [math]
 content:
 - header1: Your $math$ knowledge
-- text: >
-    What is the solution of the integral $\int x \cdot e^x dx$ ?
+- text: What is the solution of the following integral:
+- text: $\int x \cdot e^x dx$
 - task_mc_one_correct:
     correct_answer:
     - $e^x (x-1)$
@@ -11,47 +11,59 @@ content:
     - $e^x$
     - $e^x (x+1)$
     - $e^x x + e^x$
-- text: Who invented the formula $ \frac{n \cdot (n+1)}{2} $ ?
-- task_text:
-    correct_answer: Gauss
-    max_len: 20
+- separator
+- text: Who discovered the following identity:
 - text: >
-    What is
     $
-    \left(\begin{matrix}
+    \frac{1}{\pi} =
+    \frac{2 \sqrt{2}}{9801}
+    \sum_{k=0}^{\infty}
+    \frac{(4k)!(1103+26390k)}{(k!)^{4} 396^{4k}}
+    $
+- task_text:
+    correct_answer: Ramanujan
+    max_len: 20
+- separator
+- text: Compute the following matrix product:
+- text: >
+    $
+    \begin{bmatrix}
     4 & 6 \\
     1 & 3
-    \end{matrix}\right) \cdot
-    \left(\begin{matrix}
+    \end{bmatrix}
+    \cdot
+    \begin{bmatrix}
     1 & 2 \\
     1 & 0
-    \end{matrix}\right)
-    $ ?
+    \end{bmatrix}
+    =
+    \ldots
+    $
 - task_mc_one_correct:
     correct_answer:
     - >
-        $\left(\begin{matrix}
+        $\begin{bmatrix}
         10 & 8 \\
         4 & 2
-        \end{matrix}\right)$
+        \end{bmatrix}$
     wrong_answers:
     - >
-        $\left(\begin{matrix}
+        $\begin{bmatrix}
         1 & 0 \\
         0 & 1
-        \end{matrix}\right)$
+        \end{bmatrix}$
     - >
-        $\left(\begin{matrix}
+        $\begin{bmatrix}
         10 & 8 \\
         2 & 4
-        \end{matrix}\right)$
+        \end{bmatrix}$
     - >
-        $\left(\begin{matrix}
+        $\begin{bmatrix}
         8 & 10 \\
         4 & 2
-        \end{matrix}\right)$
+        \end{bmatrix}$
     - >
-        $\left(\begin{matrix}
+        $\begin{bmatrix}
         10 & 8 \\
         8 & 4
-        \end{matrix}\right)$
+        \end{bmatrix}$
