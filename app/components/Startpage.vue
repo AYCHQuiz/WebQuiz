@@ -15,7 +15,7 @@
         {{ numQuestions }} {{ numQuestions == 1 ? 'question' : 'questions' }}
         matching your interests.
     </p>
-    <button class="btn btn-primary btn-block" @click="startQuiz">Start quiz</button>
+    <button class="btn btn-primary btn-block" @click="startQuiz" :disabled="startDisabled">Start quiz</button>
 </div>
 </template>
 
@@ -25,6 +25,7 @@ export default {
         return {
             tags: [],
             selectedTags: [],
+            startDisabled: true,
             numQuestions: 0
         };
     },
@@ -36,6 +37,7 @@ export default {
             const req = new XMLHttpRequest();
             req.addEventListener("load", () => {
                 this.numQuestions = JSON.parse(req.responseText).data;
+                this.startDisabled = this.numQuestions === 0;
             });
             req.open("GET", "/api/count_questions?tags=" + tags.join("|"));
             req.send();
