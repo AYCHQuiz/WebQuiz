@@ -24,4 +24,5 @@ install:
   - npm install
   - npm run build
   - npm run doc
+  - npm run coveralls
   - python ./spec/validate_question.py "./spec/schema_static.yml" "./example-quiz/"

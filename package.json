@@ -9,7 +9,8 @@
     "buildp": "webpack -p",
     "watch": "webpack --watch",
     "doc": "apidoc -i lib/ -o apidoc/",
-    "test": "mocha test"
+    "test": "mocha test",
+    "coveralls": "istanbul cover _mocha --report lcovonly -- test && cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
     "argparse": "^1.0.9",
@@ -39,7 +40,9 @@
     "apidoc": "^0.16.1",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "istanbul": "^0.4.5",
+    "coveralls": "^2.11.15"
   },
   "apidoc": { }
 }
