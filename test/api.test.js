@@ -69,6 +69,7 @@ describe("server", () => {
 
     describe("GET /api/math/tex/svg", () => {
         it("should return SVG for simple math", done => {
+            this.timeout(5000);
             chai.request(app)
             .get("/api/math/tex/svg")
             .query({input: "1+1"})
