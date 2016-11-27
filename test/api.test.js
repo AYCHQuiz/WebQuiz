@@ -32,7 +32,7 @@ describe("server", () => {
                 expect(res).to.have.status(200);
                 expect(res).to.be.json;
                 expect(res.body.status).to.equal("success");
-                expect(res.body.data).to.equal(4);
+                expect(res.body.data).to.equal(5);
                 done();
             });
         });
@@ -61,7 +61,7 @@ describe("server", () => {
                 expect(res).to.have.status(200);
                 expect(res).to.be.json;
                 expect(res.body.status).to.equal("success");
-                expect(res.body.data).to.have.lengthOf(4);
+                expect(res.body.data).to.have.lengthOf(5);
                 done();
             });
         });

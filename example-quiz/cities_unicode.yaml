@@ -1,0 +1,46 @@
+uid: cities_unicode
+tags: [geography, география, Städte und Länder]
+content:
+- text: This question demonstrates Unicode support
+- separator
+- header1: Cities of Europe
+- text: Was ist die Hauptstadt Deutschlands?
+- task_mc_one_correct:
+    correct_answer:
+    - Berlin
+    wrong_answers:
+    - München
+    - Bonn
+    - Düsseldorf
+    - Hamburg
+- separator
+- text: Какой из этих городов является столицей Швеции?
+- task_mc_one_correct:
+    correct_answer:
+    - Стокгольм
+    wrong_answers:
+    - Гётеборг
+    - Мальмё
+    - Уппсала
+    - Лунд
+- separator
+- text: Welche Flüsse fließen durch die Dreiflüssestadt Passau?
+- task_mc_multiple_correct:
+    correct_answers:
+    - Donau
+    - Inn
+    - Ilz
+    wrong_answers:
+    - Alz
+    - Isar
+    - Salzach
+- separator
+- text: Gdzie znajdowała się stolica Korony Królestwa Polskiego?
+- task_mc_one_correct:
+    correct_answer:
+    - Kraków
+    wrong_answers:
+    - Gniezno
+    - Poznań
+    - Łódź
+    - Warszawa
