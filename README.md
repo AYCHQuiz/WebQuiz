@@ -15,7 +15,7 @@
 
 ## Installation
 
-Requirements: Node.js >= 4.x
+Requirements: Node.js >= 6.x
 
 ```sh
 git clone https://github.com/tum-rt/web-quiz.git
