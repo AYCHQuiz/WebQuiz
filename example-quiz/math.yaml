@@ -2,7 +2,7 @@ uid: math
 tags: [math]
 content:
 - header1: Your $math$ knowledge
-- text: What is the solution of the following integral:
+- text: "What is the solution of the following integral:"
 - text: $\int x \cdot e^x dx$
 - task_mc_one_correct:
     correct_answer:
@@ -12,7 +12,7 @@ content:
     - $e^x (x+1)$
     - $e^x x + e^x$
 - separator
-- text: Who discovered the following identity:
+- text: "Who discovered the following identity:"
 - text: >
     $
     \frac{1}{\pi} =
@@ -24,7 +24,7 @@ content:
     correct_answer: Ramanujan
     max_len: 20
 - separator
-- text: Compute the following matrix product:
+- text: "Compute the following matrix product:"
 - text: >
     $
     \begin{bmatrix}
