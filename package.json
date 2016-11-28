@@ -10,7 +10,8 @@
     "watch": "webpack --watch",
     "doc": "apidoc -i lib/ -o apidoc/",
     "test": "mocha test",
-    "coveralls": "istanbul cover _mocha --report lcovonly -- test && cat ./coverage/lcov.info | coveralls"
+    "coverage": "istanbul cover _mocha --report lcovonly -- test",
+    "publish_to_coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
     "argparse": "^1.0.9",

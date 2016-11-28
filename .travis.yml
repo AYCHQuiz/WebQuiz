@@ -32,4 +32,7 @@ script:
   - python ./spec/validate_question.py "./spec/schema_static.yml" "./example-quiz/"
   - npm run build
   - npm run doc
-  - npm run coveralls
+  - npm run coverage
+
+after_success:
+  - npm run publish_to_coveralls
