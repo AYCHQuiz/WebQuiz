@@ -37,6 +37,7 @@ export default {
                 this.allAnswers = [];
                 this.showStartpage = false;
                 this.showQuestion = true;
+                this.scrollUp();
             });
             req.open("GET", "/api/quiz?tags=" + tags.join("|"));
             req.send();
@@ -57,6 +58,7 @@ export default {
                     console.log("show eval");
                     this.showEvaluation = true;
                 }
+                this.scrollUp();
             });
         },
         cancel: function() {
@@ -93,6 +95,9 @@ export default {
                     });
                 }
             });
+        },
+        scrollUp: function() {
+            window.scrollTo(0, 0);
         }
     },
     components: {
