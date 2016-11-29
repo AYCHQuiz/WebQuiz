@@ -1,11 +1,13 @@
 <template>
 <div>
-    <header class="navbar">
-        <section class="navbar-section">
+    <div class="columns">
+        <div class="column col-10">
+            <quiz-progress :total="totalNum" :current="currentNum"></quiz-progress>
+        </div>
+        <div class="column col-2">
             <button href="#" class="btn float-right" @click="cancel">Cancel</button>
-        </section>
-    </header>
-    <quiz-progress :total="totalNum" :current="currentNum"></quiz-progress>
+        </div>
+    </div>
     <form v-on:submit.prevent>
         <snippet v-for="(snippet, index) in content"
             :snippet="snippet" :index="index" @input="input" />
