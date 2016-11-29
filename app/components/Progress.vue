@@ -23,7 +23,6 @@ export default {
 <style>
 .progress {
     height: 3.2rem;
-    margin-bottom: 10px;
     overflow: hidden;
     background-color: #f5f5f5;
     border-radius: 4px;
