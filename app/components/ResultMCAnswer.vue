@@ -8,9 +8,7 @@
             <i class="fa fa-dot-circle-o fa-fw" v-if="answer.user_checked"></i>
             <i class="fa fa-circle-o fa-fw" v-else></i>
         </template>
-        <i class="fa fa-check fa-fw" v-if="answer.user_checked && answer.correct"></i>
-        <i class="fa fa-close fa-fw" v-else-if="answer.user_checked && !answer.correct"></i>
-        <i class="fa fa-close fa-fw" v-else-if="!answer.user_checked && answer.correct"></i>
+        <i class="fa fa-check fa-fw" v-if="answer.correct"></i>
         <i class="fa fa-check fa-fw invisible" v-else></i>
         <fl-text :value="answer.value" />
     </div>
@@ -25,16 +23,15 @@ export default {
     props: ["answer", "type"],
     computed: {
         style: function() {
-            let bgcolor = "#FFFFFF", fgcolor = "#000000";
-            if(this.answer.user_checked && this.answer.correct) {
+            let bgcolor = "#FFFFFF";
+            if(this.answer.correct && this.answer.user_checked) {
                 bgcolor = "#8A97F9";
-            } else if(this.answer.user_checked !== this.answer.correct) {
+            } else if(this.answer.correct && !this.answer.user_checked) {
                 bgcolor = "#FFA500";
             }
 
             return {
                 "background-color": bgcolor,
-                "color": fgcolor
             };
         }
     },
