@@ -7,7 +7,7 @@ const app = require("../server.js");
 
 describe("server", () => {
     describe("GET /api/tags", () => {
-        it("should return all tags", done => {
+        it("should return all tags", (done) => {
             chai.request(app)
             .get("/api/tags")
             .end((err, res) => {
@@ -24,7 +24,7 @@ describe("server", () => {
     });
 
     describe("GET /api/count_questions", () => {
-        it("should return all if no filter given", done => {
+        it("should return all if no filter given", (done) => {
             chai.request(app)
             .get("/api/count_questions")
             .end((err, res) => {
@@ -37,7 +37,7 @@ describe("server", () => {
             });
         });
 
-        it("should return one for automobile", done => {
+        it("should return one for automobile", (done) => {
             chai.request(app)
             .get("/api/count_questions")
             .query({tags: "automobile"})
@@ -53,7 +53,7 @@ describe("server", () => {
     });
 
     describe("GET /api/quiz", () => {
-        it("should return all if no filter given", done => {
+        it("should return all if no filter given", (done) => {
             chai.request(app)
             .get("/api/quiz")
             .end((err, res) => {
@@ -82,7 +82,7 @@ describe("server", () => {
             });
         });
 
-        it("should fail if no input given", done => {
+        it("should fail if no input given", (done) => {
             chai.request(app)
             .get("/api/math/tex/svg")
             .end((err, res) => {
