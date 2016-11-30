@@ -12,7 +12,7 @@
     <h6 v-if="snippet.header3">
         <fl-text :value="snippet.header3" />
     </h6>
-    <hr v-if="snippet === 'separator'" />
+    <div v-if="snippet === 'separator'" class="divider"></div>
     <img v-if="snippet.image" :src="snippet.image" class="img-responsive" />
     <div v-if="snippet.hint" class="hint">
         <fl-text :value="snippet.hint" />

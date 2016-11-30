@@ -12,7 +12,7 @@
         <snippet v-for="(snippet, index) in content"
             :snippet="snippet" :index="index" @input="input" />
     </form>
-    <button class="btn btn-primary btn-block mt-10" @click="submit">Submit answers</button>
+    <button class="btn btn-primary btn-block" style="margin-top:3rem;" @click="submit">Submit answers</button>
     <quiz-dialog v-show="showCancelDialog" title="Web-Quiz"
         positive-text="Close quiz" negative-text="Cancel" @click="dialogClick">
         You can't come back. Your progress will be lost.
