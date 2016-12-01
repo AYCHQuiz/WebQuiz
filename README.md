@@ -25,12 +25,10 @@ npm run build
 node server.js example-quiz
 ```
 
-## Generating docs
-Install `apidoc` (globally):
-```sh
-npm install apidoc -g
-```
-Run it:
-```sh
-apidoc -i lib/ -o apidoc/
-```
+## Convenience scripts
+* `npm run build`: build the app
+* `npm run buildp`: production build, `bundle.js` is minified
+* `npm run watch`: watch sources and rebuild the client app on changes
+* `npm run doc`: generate API documentation, see `./apidoc/index.html`
+* `npm run test`: runs backend unit tests
+* `npm run coverage`: runs backend unit tests with coverage
