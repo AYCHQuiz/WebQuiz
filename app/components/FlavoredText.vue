@@ -8,6 +8,13 @@
 </template>
 
 <script>
+const regexIndexOf = (str, regex, startpos) => {
+    const indexOf = str.substring(startpos || 0).search(regex);
+    return (indexOf >= 0) ? (indexOf + (startpos || 0)) : indexOf;
+};
+
+const replaceEscapes = (text) => text.replace(/\\\$/g, "$$");
+
 export default {
     props: ["value"],
     data: () => {
@@ -21,18 +28,20 @@ export default {
         let lastIndex = 0;
         let insideMath = false;
         let index;
-        while((index = text.indexOf("$", lastIndex)) != -1) {
-            const part = text.substring(lastIndex, index);
+        while((index = regexIndexOf(text, /(^|[^\\])\$/, lastIndex)) != -1) {
+            // offset by 1 if a character (not '\') before $ was matched
+            const offset = text[index] === "$" ? 0 : 1;
+            const part = text.substring(lastIndex, index + offset);
             if(insideMath) {
                 this.content.push({ math: part });
             } else {
-                this.content.push({ text: part });
+                this.content.push({ text: replaceEscapes(part) });
             }
             insideMath = !insideMath;
-            lastIndex = index + 1;
+            lastIndex = index + 1 + offset;
         }
         if(lastIndex < text.length) {
-            this.content.push({ text: text.substring(lastIndex) });
+            this.content.push({ text: replaceEscapes(text.substring(lastIndex)) });
         }
     },
     methods: {

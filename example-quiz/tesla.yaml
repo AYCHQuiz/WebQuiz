@@ -15,7 +15,7 @@ content:
 - task_number:
     correct_answer: 4000
     abs_tol: 100
-    after: million $
+    after: million \$
 - separator
 - text: Who founded Tesla back in 2003?
 - task_mc_multiple_correct:
