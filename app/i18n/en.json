@@ -1,0 +1,13 @@
+{
+    "close": "Close",
+    "submit_answers": "Submit answers",
+    "cancel": "Cancel",
+    "close_quiz": "Close quiz",
+    "close_quiz_hint": "You can't come back. Your progress will be lost.",
+    "results": "Results",
+    "start_quiz": "Start quiz",
+    "about": "About",
+    "select_topics": "Select the topics you are interested in:",
+    "there_are_x_questions": "There is 1 question matching your interests.|There are {count} questions matching your interests.",
+    "show_hint": "Show hint"
+}

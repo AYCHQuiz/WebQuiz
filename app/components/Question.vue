@@ -6,7 +6,7 @@
                 <quiz-progress :total="totalNum" :current="currentNum"></quiz-progress>
             </div>
             <div class="column col-2">
-                <button class="btn float-right" @click="cancel">Close</button>
+                <button class="btn float-right" @click="cancel">{{ $t("close") }}</button>
             </div>
         </div>
     </navbar>
@@ -14,10 +14,10 @@
         <snippet v-for="(snippet, index) in content"
             :snippet="snippet" :index="index" @input="input" />
     </form>
-    <button class="btn btn-primary btn-block" style="margin-top:3rem;" @click="submit">Submit answers</button>
+    <button class="btn btn-primary btn-block" style="margin-top:3rem;" @click="submit">{{ $t("submit_answers") }}</button>
     <quiz-dialog v-show="showCancelDialog" title="Web-Quiz"
-        positive-text="Close quiz" negative-text="Cancel" @click="dialogClick">
-        You can't come back. Your progress will be lost.
+        :positive-text="$t('close_quiz')" :negative-text="$t('cancel')" @click="dialogClick">
+        {{ $t("close_quiz_hint") }}
     </quiz-dialog>
 </div>
 </template>

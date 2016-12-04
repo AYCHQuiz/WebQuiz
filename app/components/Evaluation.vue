@@ -3,10 +3,10 @@
     <navbar>
         <div class="columns">
             <div class="column col-10">
-                <div class="nav-title">Results</div>
+                <div class="nav-title">{{ $t("results") }}</div>
             </div>
             <div class="column col-2">
-                <button class="btn float-right" @click="close">Close</button>
+                <button class="btn float-right" @click="close">{{ $t("close") }}</button>
             </div>
         </div>
     </navbar>

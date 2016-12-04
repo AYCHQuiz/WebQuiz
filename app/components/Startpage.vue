@@ -6,11 +6,11 @@
                 <div class="nav-title">Web-Quiz</div>
             </div>
             <div class="column col-2">
-                <button class="btn btn-link float-right" @click="showAbout">About</button>
+                <button class="btn btn-link float-right" @click="showAbout">{{ $t("about") }}</button>
             </div>
         </div>
     </navbar>
-    <p>Select the topics you are interested in:</p>
+    <p>{{ $t("select_topics") }}</p>
     <form v-on:submit.prevent>
         <div class="form-group" v-for="tag in tags">
             <label class="form-checkbox">
@@ -20,11 +20,9 @@
         </div>
     </form>
     <p>
-        There {{ numQuestions == 1 ? 'is' : 'are' }}
-        {{ numQuestions }} {{ numQuestions == 1 ? 'question' : 'questions' }}
-        matching your interests.
+        {{ $tc("there_are_x_questions", numQuestions, {count: numQuestions}) }}
     </p>
-    <button class="btn btn-primary btn-block" @click="startQuiz" :disabled="startDisabled">Start quiz</button>
+    <button class="btn btn-primary btn-block" @click="startQuiz" :disabled="startDisabled">{{ $t("start_quiz") }}</button>
 </div>
 </template>
 
