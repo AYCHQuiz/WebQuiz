@@ -23,6 +23,16 @@
         {{ $tc("there_are_x_questions", numQuestions, {count: numQuestions}) }}
     </p>
     <button class="btn btn-primary btn-block" @click="startQuiz" :disabled="startDisabled">{{ $t("start_quiz") }}</button>
+    <quiz-dialog v-show="showAboutDialog" title="Web-Quiz"
+        :positive-text="$t('close')" @click="dialogClick">
+        <p>
+            [TODO] Custom about message
+        </p>
+        <p>
+        Proudly made with Node.js, Express and Vue.js.
+        Developed on <a href="https://github.com/tum-rt/web-quiz" target="_blank">Github</a>.
+        </p>
+    </quiz-dialog>
 </div>
 </template>
 
@@ -30,6 +40,7 @@
 declare var require: any;
 
 const Navbar = require("./Navbar.vue").default;
+const Dialog = require("./Dialog.vue").default;
 
 export default {
     data: () => {
@@ -37,7 +48,8 @@ export default {
             tags: [],
             selectedTags: [],
             startDisabled: true,
-            numQuestions: 0
+            numQuestions: 0,
+            showAboutDialog: false
         };
     },
     methods: {
@@ -54,7 +66,10 @@ export default {
             req.send();
         },
         showAbout: function() {
-            this.$emit("showAbout");
+            this.showAboutDialog = true;
+        },
+        dialogClick: function() {
+            this.showAboutDialog = false;
         }
     },
     watch: {
@@ -72,7 +87,8 @@ export default {
         req.send();
     },
     components: {
-        "navbar": Navbar
+        "navbar": Navbar,
+        "quiz-dialog": Dialog
     }
 }
 </script>

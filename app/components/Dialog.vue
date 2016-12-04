@@ -7,12 +7,10 @@
                 <div class="modal-title">{{ title }}</div>
             </div>
             <div class="modal-body">
-                <div class="content">
-                    <slot></slot>
-                </div>
+                <slot></slot>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-link" @click="negativeAction">{{ negativeText }}</button>
+                <button v-if="negativeText" class="btn btn-link" @click="negativeAction">{{ negativeText }}</button>
                 <button class="btn btn-primary" @click="positiveAction">{{ positiveText }}</button>
             </div>
         </div>
