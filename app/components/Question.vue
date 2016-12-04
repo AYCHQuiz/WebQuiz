@@ -1,14 +1,16 @@
 <template>
 <div>
-    <div class="columns nav">
-        <div class="column col-10">
-            <quiz-progress :total="totalNum" :current="currentNum"></quiz-progress>
+    <navbar>
+        <div class="columns">
+            <div class="column col-10">
+                <quiz-progress :total="totalNum" :current="currentNum"></quiz-progress>
+            </div>
+            <div class="column col-2">
+                <button class="btn float-right" @click="cancel">Close</button>
+            </div>
         </div>
-        <div class="column col-2">
-            <button class="btn float-right" @click="cancel">Close</button>
-        </div>
-    </div>
-    <form v-on:submit.prevent style="margin-top: 50px;">
+    </navbar>
+    <form v-on:submit.prevent>
         <snippet v-for="(snippet, index) in content"
             :snippet="snippet" :index="index" @input="input" />
     </form>
@@ -26,6 +28,7 @@ declare var require: any;
 const Snippet = require('./Snippet.vue').default;
 const Progress = require('./Progress.vue').default;
 const Dialog = require("./Dialog.vue").default;
+const Navbar = require("./Navbar.vue").default;
 
 export default {
     props: ["content", "currentNum", "totalNum"],
@@ -55,29 +58,8 @@ export default {
     components: {
         "snippet": Snippet,
         "quiz-progress": Progress,
-        "quiz-dialog": Dialog
+        "quiz-dialog": Dialog,
+        "navbar": Navbar
     }
 }
 </script>
-
-<style>
-@media screen and (min-width: 500px) {
-    .nav {
-        width: 50rem;
-    }
-}
-
-@media screen and (max-width: 499px) {
-    .nav {
-        left: 1rem;
-        right: 1rem;
-    }
-}
-
-.nav {
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    background-color: white;
-}
-</style>

@@ -1,6 +1,15 @@
 <template>
 <div>
-    <h3>Start page</h3>
+    <navbar>
+        <div class="columns">
+            <div class="column col-10" style="vertical-align:sub;">
+                <div class="nav-title">Web-Quiz</div>
+            </div>
+            <div class="column col-2">
+                <button class="btn btn-link float-right" @click="showAbout">About</button>
+            </div>
+        </div>
+    </navbar>
     <p>Select the topics you are interested in:</p>
     <form v-on:submit.prevent>
         <div class="form-group" v-for="tag in tags">
@@ -20,6 +29,10 @@
 </template>
 
 <script>
+declare var require: any;
+
+const Navbar = require("./Navbar.vue").default;
+
 export default {
     data: () => {
         return {
@@ -41,6 +54,9 @@ export default {
             });
             req.open("GET", "/api/count_questions?tags=" + tags.join("|"));
             req.send();
+        },
+        showAbout: function() {
+            this.$emit("showAbout");
         }
     },
     watch: {
@@ -56,6 +72,9 @@ export default {
         });
         req.open("GET", "/api/tags");
         req.send();
+    },
+    components: {
+        "navbar": Navbar
     }
 }
 </script>

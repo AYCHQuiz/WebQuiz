@@ -1,9 +1,16 @@
 body {
-    padding-top: 10px;
+    padding-top: 70px;
     padding-bottom: 10px;
 }
 
 div.divider {
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+.nav-title {
+    font-size: 2rem;
+    height: 3.2rem;
+    padding: .7rem 0rem;
+    font-weight: bold;
 }

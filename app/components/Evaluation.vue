@@ -1,12 +1,15 @@
 <template>
 <div>
-    <header class="navbar">
-        <section class="navbar-section">
-            <!--<a href="#" class="btn btn-link">Web Quiz</a>-->
-            <button href="#" class="btn float-right" @click="close">Close</button>
-        </section>
-    </header>
-    <h3>Results</h3>
+    <navbar>
+        <div class="columns">
+            <div class="column col-10">
+                <div class="nav-title">Results</div>
+            </div>
+            <div class="column col-2">
+                <button class="btn float-right" @click="close">Close</button>
+            </div>
+        </div>
+    </navbar>
     <form v-on:submit.prevent>
         <template v-for="question in questions">
             <snippet v-for="snippet in question" :snippet="snippet" />
@@ -19,6 +22,7 @@
 declare var require: any;
 
 const ResultSnippet = require('./ResultSnippet.vue').default;
+const Navbar = require("./Navbar.vue").default;
 
 export default {
     props: ["questions"],
@@ -31,7 +35,8 @@ export default {
         }
     },
     components: {
-        "snippet": ResultSnippet
+        "snippet": ResultSnippet,
+        "navbar": Navbar
     }
 }
 </script>
