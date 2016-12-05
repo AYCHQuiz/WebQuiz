@@ -12,6 +12,7 @@ Vue.use(VueI18n);
 (<any>Vue.config).lang = QUIZ.lang;
 (<any>Vue).locale("en", require("json-loader!./i18n/en.json"));
 (<any>Vue).locale("de", require("json-loader!./i18n/de.json"));
+(<any>Vue).locale("ru", require("json-loader!./i18n/ru.json"));
 
 new Vue({
     el: "#app",
