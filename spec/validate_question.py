@@ -3,6 +3,7 @@
 
 from __future__ import print_function
 import argparse
+import fnmatch
 import os
 import sys
 import yamale
@@ -11,7 +12,7 @@ import yamale
 def find_question_files(root_directory):
     """Yield all YAML files recursively."""
     for root, _, files in os.walk(root_directory):
-        for basename in filter(lambda s: s.endswith((".yaml", ".yml")), files):
+        for basename in fnmatch.filter(files, "q_*.yaml"):
             yield os.path.join(root, basename)
 
 
