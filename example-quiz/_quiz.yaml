@@ -1,0 +1,7 @@
+title: Example Quiz
+description: This quiz shows the capabilities of web-quiz
+lang: en
+max_questions_per_session: 10
+about: >
+  We demonstrate every feature of web-quiz with this example.
+  Awesome, isn't it?

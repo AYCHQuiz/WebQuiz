@@ -3,7 +3,7 @@
     <navbar>
         <div class="columns">
             <div class="column col-10" style="vertical-align:sub;">
-                <div class="nav-title">Web-Quiz</div>
+                <div class="nav-title">{{ title }}</div>
             </div>
             <div class="column col-2">
                 <button class="btn btn-link float-right" @click="showAbout">{{ $t("about") }}</button>
@@ -26,7 +26,7 @@
     <quiz-dialog v-show="showAboutDialog" title="Web-Quiz"
         :positive-text="$t('close')" @click="dialogClick">
         <p>
-            [TODO] Custom about message
+            {{ aboutText }}
         </p>
         <p>
         Proudly made with Node.js, Express and Vue.js.
@@ -42,9 +42,14 @@ declare var require: any;
 const Navbar = require("./Navbar.vue").default;
 const Dialog = require("./Dialog.vue").default;
 
+import {QuizConfig} from "../interfaces";
+declare var QUIZ: QuizConfig;
+
 export default {
     data: () => {
         return {
+            title: QUIZ.title,
+            aboutText: QUIZ.about,
             tags: [],
             selectedTags: [],
             startDisabled: true,

@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        meta(http-equiv="x-ua-compatible", content="ie=edge")
+        link(rel="stylesheet", href="/spectre.css")
+        link(rel="stylesheet", href="/quiz.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+        title= title
+        meta(name="description", content=description)
+    body
+        div(class="container grid-480", id="app")
+            //- This is static mark-up for crawlers.
+            //- Will be removed once Vue.js is loaded.
+            h1= title
+            p= description
+            //- For our fellow NoScript users
+            noscript
+                div(class="toast toast-danger")
+                    | For full functionality of this site it is necessary to enable JavaScript.
+                    | Here are the <a href="http://www.enable-javascript.com/" target="_blank" rel="noopener noreferrer">
+                    | instructions how to enable JavaScript in your web browser</a>.
+        script(type="text/javascript", src="api/config")
+        script(type="text/javascript", src="/bundle.js")

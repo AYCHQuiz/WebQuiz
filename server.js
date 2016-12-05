@@ -7,6 +7,7 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
+app.set("view engine", "pug");
 
 require("./lib/api")(app);
 
