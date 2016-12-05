@@ -1,1 +1,2 @@
 yamale>=1.5
+PyYAML>=3.12
