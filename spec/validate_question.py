@@ -24,7 +24,7 @@ def get_uid(filename):
     return doc["uid"]
 
 
-def validate(schema_filename, data_filename, uids):
+def validate(schema_filename, data_filename, seen_uids):
     """Validate a YAML file according to the supplied schema."""
     schema = yamale.make_schema(schema_filename)
     data = yamale.make_data(data_filename)
@@ -34,11 +34,11 @@ def validate(schema_filename, data_filename, uids):
         print("Checking file '{}'...".format(data_filename))
         yamale.validate(schema, data)
         curr_uid = get_uid(data_filename)
-        if curr_uid in uids:
+        if curr_uid in seen_uids:
             print("Invalid data: Non-unique UID '{:s}'".format(curr_uid))
             return 2
         else:
-            uids.add(curr_uid)
+            seen_uids.add(curr_uid)
         print("Everything ok.")
         return 0
     except ValueError as err:
