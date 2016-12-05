@@ -58,7 +58,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if os.path.isfile(args.path):
-        sys.exit(validate(args.schema, args.path))
+        sys.exit(validate(args.schema, args.path, set()))
     elif os.path.isdir(args.path):
         uids = set()
         # Use eager evaluation here, otherwise program exits on first invalid file
