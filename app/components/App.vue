@@ -2,7 +2,7 @@
 <div class="container grid-480">
 <startpage v-on:start="start" v-show="showStartpage"></startpage>
 <question v-on:next="next" v-if="showQuestion"
-    :content="currentQuestion" :currentNum="currentQuestionIndex"
+    :content="currentQuestion.content" :currentNum="currentQuestionIndex"
     :totalNum="questions.length" v-on:cancel="cancel" />
 <evaluation v-if="showEvaluation" :questions="questions" @close="closeEval" />
 </div>
@@ -70,31 +70,52 @@ export default {
             this.showStartpage = true;
         },
         mergeAnswers: function(userAnswers) {
-            this.currentQuestion.forEach((snippet, index) => {
+            let totalTasks = 0;
+            let correctTasks = 0;
+
+            this.currentQuestion.content.forEach((snippet, index) => {
                 const userAnswer = userAnswers[index];
 
                 if(snippet.task_text) {
-                    snippet.task_text.user_answer = userAnswer;
-                    snippet.task_text.user_correct = userAnswer ==
-                        snippet.task_text.correct_answer;
+                    const task = snippet.task_text;
+                    task.user_answer = userAnswer;
+                    task.user_correct = userAnswer == task.correct_answer;
+                    totalTasks ++;
+                    correctTasks += task.user_correct ? 1 : 0;
                 } else if(snippet.task_number) {
-                    snippet.task_number.user_answer = userAnswer;
-                    snippet.task_number.user_correct =
-                        Math.abs(snippet.task_number.correct_answer - userAnswer)
-                        <= snippet.task_number.abs_tol;
+                    const task = snippet.task_number;
+                    task.user_answer = userAnswer;
+                    task.user_correct =
+                        Math.abs(task.correct_answer - userAnswer)
+                        <= task.abs_tol;
+                    totalTasks ++;
+                    correctTasks += task.user_correct ? 1 : 0;
                 } else if(snippet.task_mc_one_correct) {
-                    snippet.task_mc_one_correct.answers.forEach(
+                    const task = snippet.task_mc_one_correct;
+                    task.answers.forEach(
                     (answer, answerIndex) => {
                         answer.user_checked = answerIndex === userAnswer;
+                        correctTasks +=
+                            answer.user_checked && answer.correct ? 1 : 0;
                     });
+                    totalTasks ++;
                 } else if(snippet.task_mc_multiple_correct) {
+                    let allAnswersCorrect = true;
                     snippet.task_mc_multiple_correct.answers.forEach(
                     (answer, answerIndex) => {
                         answer.user_checked = userAnswer &&
                             userAnswer.indexOf(answerIndex) !== -1;
+                        if(answer.user_checked !== answer.correct) {
+                            allAnswersCorrect = false;
+                        }
                     });
+                    totalTasks ++;
+                    correctTasks += allAnswersCorrect ? 1 : 0;
                 }
             });
+
+            this.currentQuestion.total_tasks = totalTasks;
+            this.currentQuestion.correct_tasks = correctTasks;
         },
         scrollUp: function() {
             window.scrollTo(0, 0);
