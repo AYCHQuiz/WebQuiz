@@ -18,6 +18,9 @@ app.get("/spectre.css", (req, res) => {
 
 app.use(express.static("app"));
 
+app.use("/font-awesome", express.static(path.join("node_modules",
+    "font-awesome")));
+
 const port = process.env.PORT || 3000;
 
 if(process.env.NODE_ENV !== "test") {
