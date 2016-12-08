@@ -1,5 +1,10 @@
 declare var require: any;
 
+// Load global CSS files
+require("spectre.css/dist/spectre.min.css");
+require("font-awesome/css/font-awesome.min.css");
+require("./quiz.css");
+
 import * as Vue from 'vue';
 const VueI18n = require("vue-i18n");
 const App = require('./components/App.vue').default;

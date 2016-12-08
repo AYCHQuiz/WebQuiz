@@ -11,15 +11,7 @@ app.set("view engine", "pug");
 
 require("./lib/api")(app);
 
-app.get("/spectre.css", (req, res) => {
-    res.sendFile(path.join(__dirname, "node_modules", "spectre.css",
-        "dist", "spectre.min.css"));
-});
-
-app.use(express.static("app"));
-
-app.use("/font-awesome", express.static(path.join("node_modules",
-    "font-awesome")));
+app.use("/static", express.static("static"));
 
 const port = process.env.PORT || 3000;
 

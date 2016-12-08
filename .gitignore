@@ -3,4 +3,5 @@ app/bundle.js
 cache/
 apidoc/
 coverage/
+static/
 npm-debug.log
