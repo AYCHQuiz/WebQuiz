@@ -16,7 +16,7 @@
     <img v-if="snippet.image" :src="snippet.image" class="img-responsive" />
     <div v-if="snippet.hint" class="hint">
         <button v-show="!showHint" class="btn" v-on:click="triggerHint">{{ $t("show_hint") }}</button>
-        <span v-show="showHint" class="hint-content">
+        <span v-show="showHint" class="toast">
             <fl-text :value="snippet.hint">
         </span>
     </div>

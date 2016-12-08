@@ -17,7 +17,7 @@
     </h6>
     <div v-if="snippet === 'separator'" class="divider"></div>
     <img v-if="snippet.image" :src="snippet.image" class="img-responsive" />
-    <div v-if="snippet.hint" class="hint">
+    <div v-if="snippet.hint" class="toast">
         <fl-text :value="snippet.hint" />
     </div>
     <text-answer v-if="snippet.task_text" :snippet="snippet.task_text" />
