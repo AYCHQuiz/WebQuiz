@@ -18,11 +18,13 @@
                 <i class="form-icon"></i> {{ tag }}
             </label>
         </div>
+        <p class="mt-10">
+            {{ $tc("there_are_x_questions", numQuestions, {count: numQuestions}) }}
+        </p>
+        <button type="submit" class="btn btn-primary btn-block"
+            @click="startQuiz" :disabled="startDisabled">{{ $t("start_quiz") }}
+        </button>
     </form>
-    <p>
-        {{ $tc("there_are_x_questions", numQuestions, {count: numQuestions}) }}
-    </p>
-    <button class="btn btn-primary btn-block" @click="startQuiz" :disabled="startDisabled">{{ $t("start_quiz") }}</button>
     <quiz-dialog v-show="showAboutDialog" title="Web-Quiz"
         :positive-text="$t('close')" @click="dialogClick">
         <p>
