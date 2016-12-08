@@ -15,7 +15,7 @@ module.exports = {
             { test: /\.vue$/, loader: "vue" },
             { test: /\.css$/, loader: "style-loader!css-loader" },
             { test: /\.(eot|svg|ttf|woff|woff2)(\?v=[0-9]+\.[0-9]+\.[0-9]+)?$/,
-              loader: 'file?name=static/fonts/[name].[ext]'}
+              loader: "file?name=static/fonts/[name].[ext]"}
         ]
     },
     vue: {
