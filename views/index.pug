@@ -6,13 +6,21 @@ html
         meta(http-equiv="x-ua-compatible", content="ie=edge")
         link(rel="icon", href="/favicon.png")
         title= title
-        meta(name="description", content=description)
+        meta(name="description", content=config.description)
+        //- Open Graph for Facebook
+        meta(property="og:title", content=config.title)
+        meta(property="og:description", content=config.description)
+        meta(property="og:image", content=config.url+"/favicon.png")
+        meta(property="og:url", content=config.url)
+        meta(property="og:type", content="website")
+        //- Additional Twitter tags
+        meta(name="twitter:card", content="summary")
     body
         div(class="container grid-480", id="app")
             //- This is static mark-up for crawlers.
             //- Will be removed once Vue.js is loaded.
-            h1= title
-            p= description
+            h1= config.title
+            p= config.description
             //- For our fellow NoScript users
             noscript
                 div(class="toast toast-danger")
