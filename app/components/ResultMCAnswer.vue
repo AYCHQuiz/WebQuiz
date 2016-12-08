@@ -40,16 +40,3 @@ export default {
     }
 }
 </script>
-
-<style>
-.quiz-answer-box {
-    display: block;
-    width: 100%;
-    border: .1rem solid #5764c6;
-    border-radius: .3rem;
-    font-size: 1.4rem;
-    /*height: 3.2rem;*/
-    padding: .7rem 1.5rem;
-    margin-top: 5px;
-}
-</style>
