@@ -13,9 +13,9 @@
     <p>{{ $t("select_topics") }}</p>
     <form v-on:submit.prevent>
         <div class="form-group" v-for="tag in tags">
-            <label class="form-checkbox">
-                <input type="checkbox" v-model="selectedTags" v-bind:value="tag" />
-                <i class="form-icon"></i> {{ tag }}
+            <label class="form-checkbox" :class="{disabled: tag.count === 0}">
+                <input type="checkbox" v-model="selectedTags" v-bind:value="tag.tag" />
+                <i class="form-icon"></i> {{ tag.tag }} ({{ tag.count }})
             </label>
         </div>
         <p class="mt-10">
@@ -63,13 +63,20 @@ export default {
         startQuiz: function() {
             this.$emit('start', this.selectedTags.slice());
         },
-        updateCount: function(tags) {
+        updateTags: function(userSelectedTags) {
             const req = new XMLHttpRequest();
             req.addEventListener("load", () => {
-                this.numQuestions = JSON.parse(req.responseText).data;
+                const response = JSON.parse(req.responseText);
+                if(response.status !== "success") {
+                    console.error("API failed: /api/tags_with_count");
+                    return;
+                }
+                this.tags = response.data.tags;
+                this.numQuestions = response.data.total;
                 this.startDisabled = this.numQuestions === 0;
             });
-            req.open("GET", "/api/count_questions?tags=" + tags.join("|"));
+            req.open("GET", "/api/tags_with_count?tags=" +
+                encodeURIComponent(userSelectedTags.join("|")));
             req.send();
         },
         showAbout: function() {
@@ -81,17 +88,11 @@ export default {
     },
     watch: {
         selectedTags: function(newTags) {
-            this.updateCount(newTags);
+            this.updateTags(newTags);
         }
     },
     created: function() {
-        const req = new XMLHttpRequest();
-        req.addEventListener("load", () => {
-            this.tags = JSON.parse(req.responseText).data;
-            this.updateCount([]);
-        });
-        req.open("GET", "/api/tags");
-        req.send();
+        this.updateTags([]);
     },
     components: {
         "navbar": Navbar,
