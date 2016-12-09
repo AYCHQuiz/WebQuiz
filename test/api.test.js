@@ -52,6 +52,66 @@ describe("server", () => {
         });
     });
 
+    describe("GET /api/tags_with_count", () => {
+        it("should return total count for each tag if no filter given", (done) => {
+            chai.request(app)
+            .get("/api/tags_with_count")
+            .end((err, res) => {
+                expect(err).to.be.null;
+                expect(res).to.have.status(200);
+                expect(res).to.be.json;
+                expect(res.body.status).to.equal("success");
+                expect(res.body.data.tags).to.have.length.of.at.least(1);
+                res.body.data.tags.forEach((pair) => {
+                    expect(pair.tag).to.be.a("string");
+                    expect(pair.count).to.equal(1);
+                });
+                expect(res.body.data.total).to.equal(5);
+                done();
+            });
+        });
+
+        it("should only return 1 for animals", (done) => {
+            chai.request(app)
+            .get("/api/tags_with_count")
+            .query({"tags": "animals"})
+            .end((err, res) => {
+                expect(err).to.be.null;
+                expect(res).to.have.status(200);
+                expect(res).to.be.json;
+                expect(res.body.status).to.equal("success");
+                expect(res.body.data.tags).to.have.length.of.at.least(1);
+                res.body.data.tags.forEach((pair) => {
+                    if(pair.tag === "animals") {
+                        expect(pair.count).to.equal(1);
+                    } else {
+                        expect(pair.count).to.equal(0);
+                    }
+                });
+                expect(res.body.data.total).to.equal(1);
+                done();
+            });
+        });
+
+        it("should give 0 for invalid tag combination", (done) => {
+            chai.request(app)
+            .get("/api/tags_with_count")
+            .query({tags: "animals|development"})
+            .end((err, res) => {
+                expect(err).to.be.null;
+                expect(res).to.have.status(200);
+                expect(res).to.be.json;
+                expect(res.body.status).to.equal("success");
+                expect(res.body.data.tags).to.have.length.of.at.least(1);
+                res.body.data.tags.forEach((pair) => {
+                    expect(pair.count).to.equal(0);
+                });
+                expect(res.body.data.total).to.equal(0);
+                done();
+            });
+        });
+    });
+
     describe("GET /api/quiz", () => {
         it("should return all if no filter given", (done) => {
             chai.request(app)
