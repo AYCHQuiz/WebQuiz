@@ -32,3 +32,12 @@ node server.js example-quiz
 * `npm run doc`: generate API documentation, see `./apidoc/index.html`
 * `npm run test`: runs backend unit tests
 * `npm run coverage`: runs backend unit tests with coverage
+
+## Docker Quickstart
+
+```sh
+git clone https://github.com/tum-rt/web-quiz.git
+cd web-quiz
+docker build -t web-quiz .
+docker run --rm -it -p 3000:3000 web-quiz
+```
