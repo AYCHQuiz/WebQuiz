@@ -1,6 +1,7 @@
 node_modules/
 app/bundle.js
 cache/
+example-quiz/_cache/
 apidoc/
 coverage/
 static/
