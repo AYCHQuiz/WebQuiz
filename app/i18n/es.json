@@ -1,0 +1,14 @@
+{
+    "close": "Cerrar",
+    "submit_answers": "Enviar respuesta",
+    "cancel": "Cancelar",
+    "close_quiz": "Cerrar Quiz",
+    "close_quiz_hint": "No puedes volver atrás. Tu progreso se perderá.",
+    "results": "Resultados ({porcentaje} %)",
+    "question_x_result": "Pregunta {num} ({correcto} / {total})",
+    "start_quiz": "Empezar Quiz",
+    "about": "Sobre el Quiz",
+    "select_topics": "Elige los temas que te interesan:",
+    "there_are_x_questions": "Hay una pregunta que corresponde a tus intereses.|Hay {count} preguntas que corresponden a tus intereses.",
+    "show_hint": "Mostrar nota"
+}

@@ -18,6 +18,7 @@ Vue.use(VueI18n);
 (<any>Vue).locale("en", require("json-loader!./i18n/en.json"));
 (<any>Vue).locale("de", require("json-loader!./i18n/de.json"));
 (<any>Vue).locale("ru", require("json-loader!./i18n/ru.json"));
+(<any>Vue).locale("es", require("json-loader!./i18n/es.json"));
 
 new Vue({
     el: "#app",
