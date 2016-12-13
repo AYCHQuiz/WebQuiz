@@ -25,3 +25,7 @@ div.divider {
     padding: .7rem 1.5rem;
     margin-top: 5px;
 }
+
+.quiz-answer-box-highlight {
+    background-color: lightgray;
+}

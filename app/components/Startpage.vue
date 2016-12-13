@@ -13,9 +13,12 @@
     <p>{{ $t("select_topics") }}</p>
     <form v-on:submit.prevent>
         <div class="form-group" v-for="tag in tags">
-            <label class="form-checkbox" :class="{disabled: tag.count === 0}">
+            <label class="form-checkbox quiz-answer-box"
+                :class="{disabled: tag.count === 0, 'quiz-answer-box-highlight': selectedTags.indexOf(tag.tag) >= 0}">
+                <i class="fa fa-check-square-o fa-fw" v-if="selectedTags.indexOf(tag.tag) >= 0"></i>
+                <i class="fa fa-square-o fa-fw" v-else></i>
                 <input type="checkbox" v-model="selectedTags" v-bind:value="tag.tag" />
-                <i class="form-icon"></i> {{ tag.tag }} ({{ tag.count }})
+                {{ tag.tag }} ({{ tag.count }})
             </label>
         </div>
         <p class="mt-10">
