@@ -26,7 +26,7 @@ export default {
             let bgcolor = "#FFFFFF";
             if(this.answer.correct && this.answer.user_checked) {
                 bgcolor = "#8A97F9";
-            } else if(this.answer.correct && !this.answer.user_checked) {
+            } else if(!this.answer.correct && this.answer.user_checked) {
                 bgcolor = "#FFA500";
             }
 
