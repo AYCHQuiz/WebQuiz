@@ -3,16 +3,20 @@
     <navbar>
         <div class="columns">
             <div class="column col-10">
-                <div class="nav-title">{{ $t("results", {percent: correctPercent}) }}</div>
+                <div class="btn-group btn-group-block">
+                    <button  v-for="(question, index) in questions"
+                        class="btn" @click="scrollTo(index)">{{ index + 1 }}</button>
+                </div>
             </div>
             <div class="column col-2">
                 <button class="btn float-right" @click="close">{{ $t("close") }}</button>
             </div>
         </div>
     </navbar>
+    <div class="big-number">{{ correctPercent }} %</div>
     <form v-on:submit.prevent>
         <template v-for="(question, index) in questions">
-            <h3>{{ $t("question_x_result", {num: index + 1, correct: question.correct_tasks, total: question.total_tasks }) }}</h3>
+            <h3 :id="index">{{ $t("question_x_result", {num: index + 1, correct: question.correct_tasks, total: question.total_tasks }) }}</h3>
             <snippet v-for="snippet in question.content" :snippet="snippet" />
         </template>
     </form>
@@ -33,6 +37,12 @@ export default {
     methods: {
         close: function() {
             this.$emit("close");
+        },
+        scrollTo: function(index) {
+            const questionHeader = document.getElementById(index);
+            const NAVBAR_HEIGHT = 60;
+            document.body.scrollTop +=
+                questionHeader.getBoundingClientRect().top - NAVBAR_HEIGHT;
         }
     },
     computed: {
@@ -54,3 +64,15 @@ export default {
     }
 }
 </script>
+
+<style>
+.big-number {
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 6rem;
+    display: block;
+    border-radius: 1rem;
+    background-color: #8A97F9;
+}
+</style>
