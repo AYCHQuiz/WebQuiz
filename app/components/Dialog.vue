@@ -1,6 +1,6 @@
 <template>
     <div class="modal modal-sm active">
-        <div class="modal-overlay"></div>
+        <div class="modal-overlay" @click="negativeAction"></div>
         <div class="modal-container">
             <div class="modal-header">
                 <button class="btn btn-clear float-right" @click="negativeAction"></button>
