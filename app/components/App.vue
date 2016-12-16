@@ -5,6 +5,8 @@
     :content="currentQuestion.content" :currentNum="currentQuestionIndex"
     :totalNum="questions.length" v-on:cancel="cancel" />
 <evaluation v-if="showEvaluation" :questions="questions" @close="closeEval" />
+<div class="divider" v-if="footer"></div>
+<div v-html="footer"></div>
 </div>
 </template>
 
@@ -15,9 +17,13 @@ const Startpage = require('./Startpage.vue').default;
 const Question = require('./Question.vue').default;
 const Evaluation = require('./Evaluation.vue').default;
 
+import {QuizConfig} from "../interfaces";
+declare var QUIZ: QuizConfig;
+
 export default {
     data: () => {
         return {
+            footer: QUIZ.footer,
             showStartpage: true,
             showQuestion: false,
             showEvaluation: false,

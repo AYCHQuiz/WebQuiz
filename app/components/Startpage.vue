@@ -3,6 +3,7 @@
     <navbar>
         <div class="columns">
             <div class="column col-10" style="vertical-align:sub;">
+                <img class="nav-icon" src="/favicon.png">
                 <div class="nav-title">{{ title }}</div>
             </div>
             <div class="column col-2">
@@ -28,15 +29,9 @@
             @click="startQuiz" :disabled="startDisabled">{{ $t("start_quiz") }}
         </button>
     </form>
-    <quiz-dialog v-show="showAboutDialog" title="Web-Quiz"
+    <quiz-dialog v-show="showAboutDialog" :title="title"
         :positive-text="$t('close')" @click="dialogClick">
-        <p>
-            {{ aboutText }}
-        </p>
-        <p>
-        Proudly made with Node.js, Express and Vue.js.
-        Developed on <a href="https://github.com/tum-rt/web-quiz" target="_blank">Github</a>.
-        </p>
+        <div v-html="aboutText"></div>
     </quiz-dialog>
 </div>
 </template>

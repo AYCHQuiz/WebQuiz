@@ -3,9 +3,16 @@ title: Example Quiz
 description: This quiz shows the capabilities of web-quiz
 lang: en
 max_questions_per_session: 10
+footer: >
+    Yep, this is an <i>awesome</i> footer.<br>
+    You can put pretty much <b>anything</b> here.
 about: >
-  We demonstrate every feature of web-quiz with this example.
-  Awesome, isn't it?
+    <p>We demonstrate every feature of web-quiz with this example.
+    Awesome, isn't it?</p>
 
-  Icons made by Roundicons (http://www.flaticon.com/authors/roundicons)
-  from www.flaticon.com is licensed by CC 3.0 BY.
+    <p>Icons made by
+    <a href="http://www.flaticon.com/authors/roundicons" target="_blank">Roundicons</a>
+    from www.flaticon.com is licensed by CC 3.0 BY.</p>
+
+    <p>Proudly made with Node.js, Express and Vue.js. Developed on
+    <a href="https://github.com/tum-rt/web-quiz" target="_blank">Github</a>.</p>

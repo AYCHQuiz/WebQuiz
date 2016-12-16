@@ -4,4 +4,5 @@ export class QuizConfig {
     lang: string;
     max_questions_per_session: number;
     about: string;
+    footer: string;
 }

@@ -13,6 +13,12 @@ div.divider {
     height: 3.2rem;
     padding: .7rem 0rem;
     font-weight: bold;
+    display: inline;
+}
+
+.nav-icon {
+    height: 3rem;
+    margin-right: 1rem;
 }
 
 .quiz-answer-box {

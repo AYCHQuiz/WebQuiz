@@ -15,7 +15,7 @@
             :snippet="snippet" :index="index" @input="input" />
     </form>
     <button class="btn btn-primary btn-block" style="margin-top:3rem;" @click="submit">{{ $t("submit_answers") }}</button>
-    <quiz-dialog v-show="showCancelDialog" title="Web-Quiz"
+    <quiz-dialog v-show="showCancelDialog" :title="title"
         :positive-text="$t('close_quiz')" :negative-text="$t('cancel')" @click="dialogClick">
         {{ $t("close_quiz_hint") }}
     </quiz-dialog>
@@ -30,10 +30,14 @@ const Progress = require('./Progress.vue').default;
 const Dialog = require("./Dialog.vue").default;
 const Navbar = require("./Navbar.vue").default;
 
+import {QuizConfig} from "../interfaces";
+declare var QUIZ: QuizConfig;
+
 export default {
     props: ["content", "currentNum", "totalNum"],
     data: () => {
         return {
+            title: QUIZ.title,
             answers: {},
             showCancelDialog: false
         };
