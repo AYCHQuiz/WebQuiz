@@ -69,7 +69,7 @@ declare var require: any;
 const FlavoredText = require("./FlavoredText.vue").default;
 
 export default {
-    data: () => {
+    data() {
         return {
             taskMCOne: undefined,
             taskMCMultiple: [],
@@ -80,21 +80,21 @@ export default {
     },
     props: ["snippet", "index", "value"],
     methods: {
-        triggerHint: function() {
+        triggerHint() {
             this.showHint = true;
         }
     },
     watch: {
-        taskMCOne: function() {
+        taskMCOne() {
             this.$emit("input", this.index, this.taskMCOne);
         },
-        taskMCMultiple: function() {
+        taskMCMultiple() {
             this.$emit("input", this.index, this.taskMCMultiple);
         },
-        taskNumber: function() {
+        taskNumber() {
             this.$emit("input", this.index, this.taskNumber);
         },
-        taskText: function() {
+        taskText() {
             this.$emit("input", this.index, this.taskText);
         }
     },

@@ -21,10 +21,10 @@
 export default {
     props: ["title", "negativeText", "positiveText"],
     methods: {
-        positiveAction: function() {
+        positiveAction() {
             this.$emit("click", "positive");
         },
-        negativeAction: function() {
+        negativeAction() {
             this.$emit("click", "negative");
         }
     }

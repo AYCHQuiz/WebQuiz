@@ -46,7 +46,7 @@ import {QuizConfig} from "../interfaces";
 declare var QUIZ: QuizConfig;
 
 export default {
-    data: () => {
+    data() {
         return {
             title: QUIZ.title,
             aboutText: QUIZ.about,
@@ -58,10 +58,10 @@ export default {
         };
     },
     methods: {
-        startQuiz: function() {
+        startQuiz() {
             this.$emit('start', this.selectedTags.slice());
         },
-        updateTags: function(userSelectedTags) {
+        updateTags(userSelectedTags) {
             const req = new XMLHttpRequest();
             req.addEventListener("load", () => {
                 const response = JSON.parse(req.responseText);
@@ -77,19 +77,19 @@ export default {
                 encodeURIComponent(userSelectedTags.join("|")));
             req.send();
         },
-        showAbout: function() {
+        showAbout() {
             this.showAboutDialog = true;
         },
-        dialogClick: function() {
+        dialogClick() {
             this.showAboutDialog = false;
         }
     },
     watch: {
-        selectedTags: function(newTags) {
+        selectedTags(newTags) {
             this.updateTags(newTags);
         }
     },
-    created: function() {
+    created() {
         this.updateTags([]);
     },
     components: {

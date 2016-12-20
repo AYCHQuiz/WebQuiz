@@ -21,13 +21,13 @@ const FlavoredText = require("./FlavoredText.vue").default;
 export default {
     props: ["snippet"],
     computed: {
-        style: function() {
+        style() {
             return {
                 "background-color": this.snippet.user_correct ?
                     "#8A97F9" : "#FFA500"
             };
         },
-        answer: function() {
+        answer() {
             return this.snippet.correct_answer ?
                 this.snippet.correct_answer : this.snippet.correct_answers[0];
         }

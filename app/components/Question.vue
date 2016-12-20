@@ -35,7 +35,7 @@ declare var QUIZ: QuizConfig;
 
 export default {
     props: ["content", "currentNum", "totalNum"],
-    data: () => {
+    data() {
         return {
             title: QUIZ.title,
             answers: {},
@@ -43,16 +43,16 @@ export default {
         };
     },
     methods: {
-        submit: function() {
+        submit() {
             this.$emit('next', this.answers);
         },
-        input: function(index, value) {
+        input(index, value) {
             this.answers[index] = value;
         },
-        cancel: function() {
+        cancel() {
             this.showCancelDialog = true;
         },
-        dialogClick: function(type) {
+        dialogClick(type) {
             this.showCancelDialog = false;
             if(type === "positive") {
                 this.$emit("cancel");

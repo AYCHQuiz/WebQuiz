@@ -31,14 +31,14 @@ const Navbar = require("./Navbar.vue").default;
 
 export default {
     props: ["questions"],
-    data: () => {
+    data() {
         return {};
     },
     methods: {
-        close: function() {
+        close() {
             this.$emit("close");
         },
-        scrollTo: function(index) {
+        scrollTo(index) {
             const questionHeader = document.getElementById(index);
             const NAVBAR_HEIGHT = 60;
             document.body.scrollTop +=
@@ -46,7 +46,7 @@ export default {
         }
     },
     computed: {
-        correctPercent: function() {
+        correctPercent() {
             const total = this.questions
             .map((q) => q.total_tasks)
             .reduce((a, b) => a + b, 0);

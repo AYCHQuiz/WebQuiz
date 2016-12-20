@@ -17,12 +17,12 @@ const replaceEscapes = (text) => text.replace(/\\\$/g, "$$");
 
 export default {
     props: ["value"],
-    data: () => {
+    data() {
         return {
             content: []
         };
     },
-    created: function() {
+    created() {
         this.content = [];
         const text = typeof this.value === "undefined" ? "" : this.value;
         let lastIndex = 0;
@@ -45,7 +45,7 @@ export default {
         }
     },
     methods: {
-        buildUrl: function(math) {
+        buildUrl(math) {
             return "/api/math/tex/svg?input=" + encodeURIComponent(math);
         }
     }

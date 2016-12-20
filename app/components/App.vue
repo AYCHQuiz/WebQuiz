@@ -21,7 +21,7 @@ import {QuizConfig} from "../interfaces";
 declare var QUIZ: QuizConfig;
 
 export default {
-    data: () => {
+    data() {
         return {
             footer: QUIZ.footer,
             showStartpage: true,
@@ -33,7 +33,7 @@ export default {
         };
     },
     methods: {
-        start: function(tags) {
+        start(tags) {
             const req = new XMLHttpRequest();
             req.addEventListener("load", () => {
                 this.questions = JSON.parse(req.responseText).data;
@@ -48,7 +48,7 @@ export default {
             req.open("GET", "/api/quiz?tags=" + tags.join("|"));
             req.send();
         },
-        next: function(answers) {
+        next(answers) {
             // HACK: force rendering on Question component
             // first: destroy old component (via v-if)
             this.showQuestion = false;
@@ -67,15 +67,15 @@ export default {
                 this.scrollUp();
             });
         },
-        cancel: function() {
+        cancel() {
             this.showQuestion = false;
             this.showStartpage = true;
         },
-        closeEval: function() {
+        closeEval() {
             this.showEvaluation = false;
             this.showStartpage = true;
         },
-        mergeAnswers: function(userAnswers) {
+        mergeAnswers(userAnswers) {
             let totalTasks = 0;
             let correctTasks = 0;
 
@@ -127,7 +127,7 @@ export default {
             this.currentQuestion.total_tasks = totalTasks;
             this.currentQuestion.correct_tasks = correctTasks;
         },
-        scrollUp: function() {
+        scrollUp() {
             window.scrollTo(0, 0);
         }
     },

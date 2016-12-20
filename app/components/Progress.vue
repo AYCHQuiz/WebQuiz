@@ -10,7 +10,7 @@
 export default {
     props: ["total", "current"],
     computed: {
-        style: function() {
+        style() {
             const percent = (this.current + 1) / this.total * 100;
             return {
                 "width": percent + "%"

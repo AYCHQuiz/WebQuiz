@@ -22,7 +22,7 @@ const FlavoredText = require("./FlavoredText.vue").default;
 export default {
     props: ["answer", "type"],
     computed: {
-        style: function() {
+        style() {
             let bgcolor = "#FFFFFF";
             if(this.answer.correct && this.answer.user_checked) {
                 bgcolor = "#8A97F9";
