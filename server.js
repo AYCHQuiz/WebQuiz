@@ -8,10 +8,11 @@ const path = require("path");
 
 const app = express();
 app.set("view engine", "pug");
-
-require("./lib/api")(app);
+app.disable("x-powered-by");
 
 app.use("/static", express.static("static"));
+
+require("./lib/api")(app);
 
 const port = process.env.PORT || 3000;
 
