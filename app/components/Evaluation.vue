@@ -16,7 +16,7 @@
     <div class="big-number">{{ correctPercent }} %</div>
     <form v-on:submit.prevent>
         <template v-for="(question, index) in questions">
-            <h3 :id="index">{{ $t("question_x_result", {num: index + 1, correct: question.correct_tasks, total: question.total_tasks }) }}</h3>
+            <h3 ref="header">{{ $t("question_x_result", {num: index + 1, correct: question.correct_tasks, total: question.total_tasks }) }}</h3>
             <snippet v-for="snippet in question.content" :snippet="snippet" />
         </template>
     </form>
@@ -39,7 +39,7 @@ export default {
             this.$emit("close");
         },
         scrollTo(index) {
-            const questionHeader = document.getElementById(index);
+            const questionHeader = this.$refs.header[index];
             const NAVBAR_HEIGHT = 60;
             document.body.scrollTop +=
                 questionHeader.getBoundingClientRect().top - NAVBAR_HEIGHT;
