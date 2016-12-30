@@ -1,10 +1,10 @@
 <template>
 <div class="container grid-480">
-<startpage @start="start" v-show="showStartpage"></startpage>
-<question @next="next" v-if="showQuestion"
+<startpage @start="start" v-show="show == 'startpage'"></startpage>
+<question @next="next" v-if="show == 'question'"
     :content="currentQuestion.content" :currentNum="currentQuestionIndex"
     :totalNum="questions.length" @cancel="cancel" />
-<evaluation v-if="showEvaluation" :questions="questions" @close="closeEval" />
+<evaluation v-if="show == 'evaluation'" :questions="questions" @close="closeEval" />
 <div class="divider" v-if="footer"></div>
 <div v-html="footer"></div>
 </div>
@@ -27,9 +27,7 @@ export default {
     data() {
         return {
             footer: config.footer,
-            showStartpage: true,
-            showQuestion: false,
-            showEvaluation: false,
+            show: "startpage",
             questions: [],
             currentQuestionIndex: 0,
             currentQuestion: []
@@ -49,8 +47,7 @@ export default {
                 this.currentQuestion = this.questions[0];
                 this.currentQuestionIndex = 0;
                 this.allAnswers = [];
-                this.showStartpage = false;
-                this.showQuestion = true;
+                this.show = "question";
                 this.scrollUp();
                 this.saveState();
             });
@@ -58,7 +55,7 @@ export default {
         next(answers) {
             // HACK: force rendering on Question component
             // first: destroy old component (via v-if)
-            this.showQuestion = false;
+            this.show = "";
 
             this.mergeAnswers(answers);
 
@@ -66,22 +63,20 @@ export default {
                 this.currentQuestionIndex ++;
                 if(this.currentQuestionIndex < this.questions.length) {
                     this.currentQuestion = this.questions[this.currentQuestionIndex];
-                    this.showQuestion = true; // third: create new component (via v-if)
+                    this.show = "question"; // third: create new component (via v-if)
                 } else {
-                    this.showEvaluation = true;
+                    this.show = "evaluation";
                 }
                 this.scrollUp();
                 this.saveState();
             });
         },
         cancel() {
-            this.showQuestion = false;
-            this.showStartpage = true;
+            this.show = "startpage";
             this.deleteState();
         },
         closeEval() {
-            this.showEvaluation = false;
-            this.showStartpage = true;
+            this.show = "startpage";
             this.deleteState();
         },
         mergeAnswers(userAnswers) {
@@ -155,12 +150,11 @@ export default {
                 this.questions = state.questions;
                 this.currentQuestionIndex = state.currentQuestionIndex;
 
-                this.showStartpage = false;
                 if(this.currentQuestionIndex < this.questions.length) {
-                    this.showQuestion = true;
+                    this.show = "question";
                     this.currentQuestion = this.questions[this.currentQuestionIndex];
                 } else {
-                    this.showEvaluation = true;
+                    this.show = "evaluation";
                 }
             }
         }
