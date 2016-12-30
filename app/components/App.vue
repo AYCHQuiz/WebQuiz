@@ -20,6 +20,9 @@ const Evaluation = require('./Evaluation.vue').default;
 import config from "../config";
 import {getQuiz} from "../api";
 
+const STATE_KEY = "state"; // Key to use in localStorage
+const STATE_VERSION = 1;   // Only load states of the same version
+
 export default {
     data() {
         return {
@@ -31,6 +34,9 @@ export default {
             currentQuestionIndex: 0,
             currentQuestion: []
         };
+    },
+    created() {
+        this.loadState();
     },
     methods: {
         start(tags) {
@@ -46,6 +52,7 @@ export default {
                 this.showStartpage = false;
                 this.showQuestion = true;
                 this.scrollUp();
+                this.saveState();
             });
         },
         next(answers) {
@@ -64,15 +71,18 @@ export default {
                     this.showEvaluation = true;
                 }
                 this.scrollUp();
+                this.saveState();
             });
         },
         cancel() {
             this.showQuestion = false;
             this.showStartpage = true;
+            this.deleteState();
         },
         closeEval() {
             this.showEvaluation = false;
             this.showStartpage = true;
+            this.deleteState();
         },
         mergeAnswers(userAnswers) {
             let totalTasks = 0;
@@ -128,6 +138,31 @@ export default {
         },
         scrollUp() {
             window.scrollTo(0, 0);
+        },
+        saveState() {
+            localStorage.setItem(STATE_KEY, JSON.stringify({
+                "version": STATE_VERSION,
+                "questions": this.questions,
+                "currentQuestionIndex": this.currentQuestionIndex
+            }));
+        },
+        deleteState() {
+            localStorage.removeItem(STATE_KEY);
+        },
+        loadState() {
+            const state = JSON.parse(localStorage.getItem(STATE_KEY));
+            if(state !== null && state.version === STATE_VERSION) {
+                this.questions = state.questions;
+                this.currentQuestionIndex = state.currentQuestionIndex;
+
+                this.showStartpage = false;
+                if(this.currentQuestionIndex < this.questions.length) {
+                    this.showQuestion = true;
+                    this.currentQuestion = this.questions[this.currentQuestionIndex];
+                } else {
+                    this.showEvaluation = true;
+                }
+            }
         }
     },
     components: {
