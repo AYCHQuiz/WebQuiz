@@ -12,13 +12,13 @@
         </div>
     </navbar>
     <p>{{ $t("select_topics") }}</p>
-    <form v-on:submit.prevent>
+    <form @submit.prevent>
         <div class="form-group" v-for="tag in tags">
             <label class="form-checkbox quiz-answer-box"
                 :class="{disabled: tag.count === 0, 'quiz-answer-box-highlight': selectedTags.indexOf(tag.tag) >= 0}">
                 <i class="fa fa-check-square-o fa-fw" v-if="selectedTags.indexOf(tag.tag) >= 0"></i>
                 <i class="fa fa-square-o fa-fw" v-else></i>
-                <input type="checkbox" v-model="selectedTags" v-bind:value="tag.tag" />
+                <input type="checkbox" v-model="selectedTags" :value="tag.tag" />
                 {{ tag.tag }} ({{ tag.count }})
             </label>
         </div>

@@ -14,7 +14,7 @@
         </div>
     </navbar>
     <div class="big-number">{{ correctPercent }} %</div>
-    <form v-on:submit.prevent>
+    <form @submit.prevent>
         <template v-for="(question, index) in questions">
             <h3 ref="header">{{ $t("question_x_result", {num: index + 1, correct: question.correct_tasks, total: question.total_tasks }) }}</h3>
             <snippet v-for="snippet in question.content" :snippet="snippet" />

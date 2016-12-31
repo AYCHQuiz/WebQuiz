@@ -1,9 +1,9 @@
 <template>
 <div class="container grid-480">
-<startpage v-on:start="start" v-show="showStartpage"></startpage>
-<question v-on:next="next" v-if="showQuestion"
+<startpage @start="start" v-show="showStartpage"></startpage>
+<question @next="next" v-if="showQuestion"
     :content="currentQuestion.content" :currentNum="currentQuestionIndex"
-    :totalNum="questions.length" v-on:cancel="cancel" />
+    :totalNum="questions.length" @cancel="cancel" />
 <evaluation v-if="showEvaluation" :questions="questions" @close="closeEval" />
 <div class="divider" v-if="footer"></div>
 <div v-html="footer"></div>

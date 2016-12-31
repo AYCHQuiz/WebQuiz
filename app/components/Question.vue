@@ -10,7 +10,7 @@
             </div>
         </div>
     </navbar>
-    <form v-on:submit.prevent>
+    <form @submit.prevent>
         <snippet v-for="(snippet, index) in content"
             :snippet="snippet" :index="index" @input="input" />
     </form>
