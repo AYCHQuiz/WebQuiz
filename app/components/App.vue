@@ -61,7 +61,6 @@ export default {
                     this.currentQuestion = this.questions[this.currentQuestionIndex];
                     this.showQuestion = true; // third: create new component (via v-if)
                 } else {
-                    console.log("show eval");
                     this.showEvaluation = true;
                 }
                 this.scrollUp();
