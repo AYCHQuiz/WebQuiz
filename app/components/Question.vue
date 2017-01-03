@@ -30,14 +30,13 @@ const Progress = require('./Progress.vue').default;
 const Dialog = require("./Dialog.vue").default;
 const Navbar = require("./Navbar.vue").default;
 
-import {QuizConfig} from "../interfaces";
-declare var QUIZ: QuizConfig;
+import config from "../config";
 
 export default {
     props: ["content", "currentNum", "totalNum"],
     data() {
         return {
-            title: QUIZ.title,
+            title: config.title,
             answers: {},
             showCancelDialog: false
         };

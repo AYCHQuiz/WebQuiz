@@ -6,15 +6,14 @@ require("font-awesome/css/font-awesome.min.css");
 require("./quiz.css");
 
 import * as Vue from 'vue';
+import config from "./config";
 const VueI18n = require("vue-i18n");
 const App = require('./components/App.vue').default;
 
-import {QuizConfig} from "./interfaces";
-declare var QUIZ: QuizConfig;
-document.title = QUIZ.title;
+document.title = config.title;
 
 Vue.use(VueI18n);
-(<any>Vue.config).lang = QUIZ.lang;
+(<any>Vue.config).lang = config.lang;
 (<any>Vue).locale("en", require("json-loader!./i18n/en.json"));
 (<any>Vue).locale("de", require("json-loader!./i18n/de.json"));
 (<any>Vue).locale("ru", require("json-loader!./i18n/ru.json"));

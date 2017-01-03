@@ -17,13 +17,12 @@ const Startpage = require('./Startpage.vue').default;
 const Question = require('./Question.vue').default;
 const Evaluation = require('./Evaluation.vue').default;
 
-import {QuizConfig} from "../interfaces";
-declare var QUIZ: QuizConfig;
+import config from "../config";
 
 export default {
     data() {
         return {
-            footer: QUIZ.footer,
+            footer: config.footer,
             showStartpage: true,
             showQuestion: false,
             showEvaluation: false,

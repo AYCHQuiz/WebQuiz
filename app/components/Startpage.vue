@@ -42,14 +42,13 @@ declare var require: any;
 const Navbar = require("./Navbar.vue").default;
 const Dialog = require("./Dialog.vue").default;
 
-import {QuizConfig} from "../interfaces";
-declare var QUIZ: QuizConfig;
+import config from "../config";
 
 export default {
     data() {
         return {
-            title: QUIZ.title,
-            aboutText: QUIZ.about,
+            title: config.title,
+            aboutText: config.about,
             tags: [],
             selectedTags: [],
             startDisabled: true,

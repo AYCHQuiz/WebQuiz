@@ -15,6 +15,8 @@ html
         meta(property="og:type", content="website")
         //- Additional Twitter tags
         meta(name="twitter:card", content="summary")
+        //- Static quiz config
+        script(id="config", type="application/json")!= configString
     body
         div(class="container grid-480", id="app")
             //- This is static mark-up for crawlers.
@@ -27,5 +29,4 @@ html
                     | For full functionality of this site it is necessary to enable JavaScript.
                     | Here are the <a href="http://www.enable-javascript.com/" target="_blank" rel="noopener noreferrer">
                     | instructions how to enable JavaScript in your web browser</a>.
-        script(type="text/javascript", src="api/config")
         script(type="text/javascript", src="/static/js/bundle.js")
