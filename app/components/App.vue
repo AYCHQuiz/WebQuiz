@@ -18,6 +18,7 @@ const Question = require('./Question.vue').default;
 const Evaluation = require('./Evaluation.vue').default;
 
 import config from "../config";
+import {getQuiz} from "../api";
 
 export default {
     data() {
@@ -33,10 +34,12 @@ export default {
     },
     methods: {
         start(tags) {
-            const req = new XMLHttpRequest();
-            req.addEventListener("load", () => {
-                this.questions = JSON.parse(req.responseText).data;
-                localStorage.setItem("quiz", req.responseText);
+            getQuiz(tags, (err, data) => {
+                if(err) {
+                    console.error("API failed: /api/quiz", err);
+                    return;
+                }
+                this.questions = data;
                 this.currentQuestion = this.questions[0];
                 this.currentQuestionIndex = 0;
                 this.allAnswers = [];
@@ -44,8 +47,6 @@ export default {
                 this.showQuestion = true;
                 this.scrollUp();
             });
-            req.open("GET", "/api/quiz?tags=" + tags.join("|"));
-            req.send();
         },
         next(answers) {
             // HACK: force rendering on Question component

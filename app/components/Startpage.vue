@@ -43,6 +43,7 @@ const Navbar = require("./Navbar.vue").default;
 const Dialog = require("./Dialog.vue").default;
 
 import config from "../config";
+import {getTagsWithCount} from "../api";
 
 export default {
     data() {
@@ -61,20 +62,15 @@ export default {
             this.$emit('start', this.selectedTags.slice());
         },
         updateTags(userSelectedTags) {
-            const req = new XMLHttpRequest();
-            req.addEventListener("load", () => {
-                const response = JSON.parse(req.responseText);
-                if(response.status !== "success") {
-                    console.error("API failed: /api/tags_with_count");
+            getTagsWithCount(userSelectedTags, (err, data) => {
+                if(err) {
+                    console.error("API failed: /api/tags_with_count", err);
                     return;
                 }
-                this.tags = response.data.tags;
-                this.numQuestions = response.data.total;
+                this.tags = data.tags;
+                this.numQuestions = data.total;
                 this.startDisabled = this.numQuestions === 0;
             });
-            req.open("GET", "/api/tags_with_count?tags=" +
-                encodeURIComponent(userSelectedTags.join("|")));
-            req.send();
         },
         showAbout() {
             this.showAboutDialog = true;
