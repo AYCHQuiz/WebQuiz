@@ -7,8 +7,11 @@ require("./quiz.css");
 
 import * as Vue from 'vue';
 import config from "./config";
+import {prewarmTagsWithCountCache} from "./api";
 const VueI18n = require("vue-i18n");
 const App = require('./components/App.vue').default;
+
+prewarmTagsWithCountCache([], JSON.parse(document.getElementById("tags_with_count").innerHTML));
 
 document.title = config.title;
 

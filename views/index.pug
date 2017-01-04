@@ -17,6 +17,7 @@ html
         meta(name="twitter:card", content="summary")
         //- Static quiz config
         script(id="config", type="application/json")!= configString
+        script(id="tags_with_count", type="application/json")!= tagsWithCount
     body
         div(class="container grid-480", id="app")
             //- This is static mark-up for crawlers.

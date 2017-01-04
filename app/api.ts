@@ -6,7 +6,7 @@
  * @param {Object} params URL parameter, appended with '?' after the url
  * @param {Function} callback Is called when the Ajax call finished
  */
-function ajax(method: string, url: string, params: Object, callback: (err, data?)=>void) {
+function ajax(method: string, url: string, params: { [key:string]:string; }, callback: (err, data?)=>void) {
     const req = new XMLHttpRequest();
     req.addEventListener("load", () => {
         const response = JSON.parse(req.responseText);
@@ -49,6 +49,10 @@ export function getTagsWithCount(tags: string[], callback: (err, data?)=>void) {
             callback(null, data);
         });
     }
+}
+
+export function prewarmTagsWithCountCache(tags: string[], data) {
+    tagsWithCountCache[tags.join("|")] = data;
 }
 
 export function getQuiz(tags: string[], callback: (err, data?)=>void) {
