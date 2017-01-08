@@ -41,7 +41,7 @@
     <template v-if="snippet.task_mc_multiple_correct">
         <div v-for="(answer, answerIndex) in snippet.task_mc_multiple_correct.answers"
             class="form-group">
-            <label class="form-checkbox quiz-answer-box">
+            <label class="form-checkbox quiz-answer-box" :class="{'quiz-answer-box-highlight': taskMCMultiple.indexOf(answerIndex) >= 0}">
                 <i class="fa fa-check-square-o fa-fw" v-if="taskMCMultiple.indexOf(answerIndex) >= 0"></i>
                 <i class="fa fa-square-o fa-fw" v-else></i>
                 <input type="checkbox" v-model="taskMCMultiple" :value="answerIndex">
@@ -52,7 +52,7 @@
     <template v-if="snippet.task_mc_one_correct">
         <div v-for="(answer, answerIndex) in snippet.task_mc_one_correct.answers"
             class="form-group">
-            <label class="form-radio quiz-answer-box">
+            <label class="form-radio quiz-answer-box" :class="{'quiz-answer-box-highlight': taskMCOne === answerIndex}">
                 <input type="radio" :name="index" :value="answerIndex" v-model="taskMCOne">
                 <i class="fa fa-dot-circle-o fa-fw" v-if="taskMCOne == answerIndex"></i>
                 <i class="fa fa-circle-o fa-fw" v-else></i>
