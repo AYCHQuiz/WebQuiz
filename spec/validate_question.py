@@ -54,15 +54,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog='Validate web quiz questions')
     parser.add_argument('schema', type=str, help='path to the schema')
     parser.add_argument('path', type=str,
-                        help='question file or a directory with files to be validated')
+                        help='file or a directory with files to be validated')
     args = parser.parse_args()
 
     if os.path.isfile(args.path):
         sys.exit(validate(args.schema, args.path, set()))
     elif os.path.isdir(args.path):
         uids = set()
-        # Use eager evaluation here, otherwise program exits on first invalid file
-        exit_codes = [validate(args.schema, d, uids) for d in find_question_files(args.path)]
+        # Use eager evaluation here, otherwise program exits after
+        # the first invalid file
+        exit_codes = [validate(args.schema, d, uids)
+                      for d in find_question_files(args.path)]
         if all(ec == 0 for ec in exit_codes):
             sys.exit(0)
         else:
