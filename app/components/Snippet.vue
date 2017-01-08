@@ -15,7 +15,7 @@
     <div v-if="snippet === 'separator'" class="divider"></div>
     <img v-if="snippet.image" :src="snippet.image" class="img-responsive" />
     <div v-if="snippet.hint" class="hint">
-        <button v-show="!showHint" class="btn" @click="triggerHint">{{ $t("show_hint") }}</button>
+        <button v-show="!showHint" class="btn btn-block" @click="triggerHint">{{ $t("show_hint") }}</button>
         <span v-show="showHint" class="toast">
             <fl-text :value="snippet.hint">
         </span>
