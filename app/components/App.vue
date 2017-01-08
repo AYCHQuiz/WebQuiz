@@ -3,8 +3,8 @@
 <startpage @start="start" v-show="show == 'startpage'"></startpage>
 <question @next="next" v-if="show == 'question'"
     :content="currentQuestion.content" :currentNum="currentQuestionIndex"
-    :totalNum="questions.length" @cancel="cancel" />
-<evaluation v-if="show == 'evaluation'" :questions="questions" @close="closeEval" />
+    :totalNum="questions.length" @cancel="goBackToStartpage" />
+<evaluation v-if="show == 'evaluation'" :questions="questions" @close="goBackToStartpage" />
 <div class="divider" v-if="footer"></div>
 <div v-html="footer"></div>
 </div>
@@ -71,11 +71,7 @@ export default {
                 this.saveState();
             });
         },
-        cancel() {
-            this.show = "startpage";
-            this.deleteState();
-        },
-        closeEval() {
+        goBackToStartpage() {
             this.show = "startpage";
             this.deleteState();
         },
