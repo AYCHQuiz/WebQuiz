@@ -78,7 +78,7 @@ export default {
             showHint: false
         };
     },
-    props: ["snippet", "index", "value"],
+    props: ["snippet", "index"],
     methods: {
         triggerHint() {
             this.showHint = true;
