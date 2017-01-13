@@ -1,8 +1,8 @@
 <template>
     <span>
         <template v-for="partial in content">
-            <template v-if="partial.text">{{ partial.text }}</template>
-            <img v-if="partial.math" :src="buildUrl(partial.math)">
+            <span v-if="partial.text" class="va-middle">{{ partial.text }}</span>
+            <img v-if="partial.math" :src="buildUrl(partial.math)" class="va-middle" />
         </template>
     </span>
 </template>
@@ -51,3 +51,9 @@ export default {
     }
 }
 </script>
+
+<style>
+.va-middle {
+    vertical-align: middle;
+}
+</style>
