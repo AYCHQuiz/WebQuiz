@@ -1,7 +1,11 @@
+const path = require("path");
+
 module.exports = {
     entry: "./app/app.ts",
     output: {
-        filename: "static/js/bundle.js"
+        path: path.resolve(__dirname, "static"),
+        publicPath: "/static/",
+        filename: "bundle.js"
     },
     resolve: {
         extensions: [".webpack.js", ".web.js", ".ts", ".js"]
@@ -30,7 +34,9 @@ module.exports = {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 loader: "file-loader",
                 query: {
-                    name: "static/fonts/[name].[ext]"
+                    name: "[name].[ext]",
+                    publicPath: "/static/",
+                    outputPath: path.resolve(__dirname, "static")
                 }
             }
         ]

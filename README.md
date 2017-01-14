@@ -26,6 +26,7 @@ node server.js example-quiz
 ```
 
 ## Convenience scripts
+* `npm run dev`: run server with example-quiz in devlopment mode 
 * `npm run build`: build the app
 * `npm run buildp`: production build, `bundle.js` is minified
 * `npm run watch`: watch sources and rebuild the client app on changes
