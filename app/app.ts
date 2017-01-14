@@ -2,7 +2,7 @@ declare var require: any;
 
 // Load global CSS files
 require("spectre.css/dist/spectre.min.css");
-require("font-awesome/css/font-awesome.min.css");
+require("./fontello/css/webquiz.css");
 require("./quiz.css");
 
 import * as Vue from 'vue';

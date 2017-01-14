@@ -1,15 +1,15 @@
 <template>
     <div class="quiz-answer-box" :style="style">
         <template v-if="type === 'checkbox'">
-            <i class="fa fa-check-square-o fa-fw" v-if="answer.user_checked"></i>
-            <i class="fa fa-square-o fa-fw" v-else></i>
+            <i class="icon-check-square-o" v-if="answer.user_checked"></i>
+            <i class="icon-square-o" v-else></i>
         </template>
         <template v-else>
-            <i class="fa fa-dot-circle-o fa-fw" v-if="answer.user_checked"></i>
-            <i class="fa fa-circle-o fa-fw" v-else></i>
+            <i class="icon-dot-circle-o" v-if="answer.user_checked"></i>
+            <i class="icon-circle-o" v-else></i>
         </template>
-        <i class="fa fa-check fa-fw" v-if="answer.correct"></i>
-        <i class="fa fa-check fa-fw invisible" v-else></i>
+        <i class="icon-check" v-if="answer.correct"></i>
+        <i class="icon-check invisible" v-else></i>
         <fl-text :value="answer.value" />
     </div>
 </template>

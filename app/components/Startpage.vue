@@ -16,8 +16,8 @@
         <div class="form-group" v-for="tag in tags">
             <label class="form-checkbox quiz-answer-box"
                 :class="{disabled: tag.count === 0, 'quiz-answer-box-highlight': selectedTags.indexOf(tag.tag) >= 0}">
-                <i class="fa fa-check-square-o fa-fw" v-if="selectedTags.indexOf(tag.tag) >= 0"></i>
-                <i class="fa fa-square-o fa-fw" v-else></i>
+                <i class="icon-check-square-o" v-if="selectedTags.indexOf(tag.tag) >= 0"></i>
+                <i class="icon-square-o" v-else></i>
                 <input type="checkbox" v-model="selectedTags" :value="tag.tag" />
                 {{ tag.tag }} ({{ tag.count }})
             </label>
