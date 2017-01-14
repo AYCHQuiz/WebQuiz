@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@types/core-js": "^0.9.34",
-    "apidoc": "^0.16.1",
+    "apidoc": "^0.17.0",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
     "coveralls": "^2.11.15",
