@@ -22,11 +22,11 @@ git clone https://github.com/tum-rt/web-quiz.git
 cd web-quiz
 npm install
 npm run build
-node server.js example-quiz
+npm run dev
 ```
 
 ## Convenience scripts
-* `npm run dev`: run server with example-quiz in devlopment mode 
+* `npm run dev`: run server with example-quiz in development mode
 * `npm run build`: build the app
 * `npm run buildp`: production build, `bundle.js` is minified
 * `npm run watch`: watch sources and rebuild the client app on changes
