@@ -24,11 +24,11 @@ module.exports = function (config) {
             device: "iPhone 6"
         },
         sl_android_5: {
-	        base: "SauceLabs",
-	        browserName: "Browser",
-	        platform: "Android",
-	        version: "5.1",
-	        device: "Android Emulator",
+            base: "SauceLabs",
+            browserName: "Browser",
+            platform: "Android",
+            version: "5.1",
+            device: "Android Emulator",
         },
         sl_chrome: {
             base: "SauceLabs",
