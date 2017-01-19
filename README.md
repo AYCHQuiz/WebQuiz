@@ -7,6 +7,8 @@
 [![Code Climate](https://codeclimate.com/github/tum-rt/web-quiz/badges/gpa.svg)](https://codeclimate.com/github/tum-rt/web-quiz)
 [![Coverage Status](https://coveralls.io/repos/github/tum-rt/web-quiz/badge.svg?branch=master)](https://coveralls.io/github/tum-rt/web-quiz?branch=master)
 
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/web-quiz.svg)](https://saucelabs.com/u/web-quiz)
+
 ## Features
 * Basic multiple choice questions (single answer and multiple answer)
 * Support for numerical problems with a tolerance region for the correct answers
@@ -37,6 +39,8 @@ npm run dev
 * `npm run doc`: generate API documentation, see `./apidoc/index.html`
 * `npm run test`: runs backend unit tests
 * `npm run coverage`: runs backend unit tests with coverage
+* `npm run karma`: run front-end browser tests once
+* `npm run karma-watch`: run front-end browser tests, let browsers open and watch files
 
 ## Docker Quickstart
 

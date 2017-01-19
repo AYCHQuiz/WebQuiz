@@ -3,6 +3,7 @@ node_js:
   - "4"
   - "5"
   - "6"
+  - "7"
 
 matrix:
   allow_failures:
@@ -30,6 +31,7 @@ script:
   - npm run build
   - npm run doc
   - npm run coverage
+  - if [ "$TRAVIS_NODE_VERSION" = "6" ]; then npm run saucelabs; fi
 
 after_success:
   - npm run publish_to_coveralls
