@@ -3,7 +3,6 @@
         <div class="modal-overlay" @click="negativeAction"></div>
         <div class="modal-container">
             <div class="modal-header">
-                <button class="btn btn-clear float-right" @click="negativeAction"></button>
                 <div class="modal-title">{{ title }}</div>
             </div>
             <div class="modal-body">

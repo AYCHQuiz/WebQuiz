@@ -3,7 +3,7 @@
     <navbar>
         <div class="columns">
             <div class="column col-10">
-                <quiz-progress :total="totalNum" :current="currentNum"></quiz-progress>
+                <quiz-progress :max="totalNum" :value="currentNum + 1"></quiz-progress>
             </div>
             <div class="column col-2">
                 <button class="btn float-right" @click="cancel">{{ $t("close") }}</button>

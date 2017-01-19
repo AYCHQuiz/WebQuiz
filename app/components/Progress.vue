@@ -1,17 +1,17 @@
 <template>
     <div class="progress">
         <div class="progress-bar" :style="style">
-            {{ current + 1 }} / {{ total }}
+            {{ value }} / {{ max }}
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    props: ["total", "current"],
+    props: ["value", "max"],
     computed: {
         style() {
-            const percent = (this.current + 1) / this.total * 100;
+            const percent = this.value / this.max * 100;
             return {
                 "width": percent + "%"
             };
