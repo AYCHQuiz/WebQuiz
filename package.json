@@ -10,7 +10,7 @@
     "watch": "webpack --watch",
     "dev": "NODE_ENV=development node server example-quiz",
     "doc": "apidoc -i lib/ -o apidoc/",
-    "test": "mocha test",
+    "test": "mocha lib/test",
     "karma": "karma start karma.conf.js --single-run",
     "karma-watch": "karma start karma.conf.js --no-single-run",
     "saucelabs": "karma start karma-saucelabs.conf.js",

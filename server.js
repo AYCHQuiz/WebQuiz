@@ -8,6 +8,7 @@ const path = require("path");
 
 const app = express();
 app.set("view engine", "pug");
+app.set('views', path.join(__dirname, 'lib/views'));
 app.disable("x-powered-by");
 
 if(process.env.NODE_ENV === "development") {
