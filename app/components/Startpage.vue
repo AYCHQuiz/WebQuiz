@@ -3,7 +3,7 @@
     <navbar>
         <div class="columns">
             <div class="column col-10" style="vertical-align:sub;">
-                <img class="nav-icon" src="/favicon.png">
+                <img class="nav-icon" src="/public/favicon.png">
                 <div class="nav-title">{{ title }}</div>
             </div>
             <div class="column col-2">
