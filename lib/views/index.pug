@@ -20,10 +20,6 @@ html
         script(id="tags_with_count", type="application/json")!= tagsWithCount
     body
         div(class="container grid-480", id="app")
-            //- This is static mark-up for crawlers.
-            //- Will be removed once Vue.js is loaded.
-            h1= config.title
-            p= config.description
             //- For our fellow NoScript users
             noscript
                 div(class="toast toast-danger")
