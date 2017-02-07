@@ -46,15 +46,18 @@ node server.js example-quiz
 ```
 
 ## Convenience scripts
-* `npm run dev`: run server with example-quiz in development mode
-* `npm run build`: build the app
-* `npm run buildp`: production build, `bundle.js` is minified
-* `npm run watch`: watch sources and rebuild the client app on changes
-* `npm run doc`: generate API documentation, see `./apidoc/index.html`
-* `npm run test`: runs backend unit tests
-* `npm run coverage`: runs backend unit tests with coverage
-* `npm run karma`: run front-end browser tests once
-* `npm run karma-watch`: run front-end browser tests, let browsers open and watch files
+
+| Command               | Action                                                         |
+|:----------------------|:---------------------------------------------------------------|
+| `npm run dev`         | run server with example-quiz in development mode               |
+| `npm run build`       | build the app                                                  |
+| `npm run buildp`      | production build, `bundle.js` is minified                      |
+| `npm run watch`       | watch sources and rebuild the client app on changes            |
+| `npm run doc`         | generate API documentation, see `./apidoc/index.html`          |
+| `npm run test`        | runs backend unit tests                                        |
+| `npm run coverage`    | runs backend unit tests with coverage                          |
+| `npm run karma`       | run front-end browser tests once                               |
+| `npm run karma-watch` | run front-end browser tests, let browsers open and watch files |
 
 ## Custom quiz questions
 Create an empty folder and with a file called `_config.yml`. This is the
