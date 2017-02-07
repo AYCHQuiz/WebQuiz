@@ -94,7 +94,8 @@ content:
     - Python
     - Groovy
 - separator
-- text: Check the browsers web-quiz supports:
+- text: "Check the browsers web-quiz supports:"
+- hint: Nope, we don't use Windows XP anymore.
 - task_mc_multiple_correct:
     correct_answers:
     - Firefox
@@ -104,7 +105,6 @@ content:
     wrong_answers:
     - Internet Explorer
     - Lynx
-- hint: Nope, we don't use Windows XP anymore.
 ```
 
 You can find further examples in the `example-quiz` folder of this project.
