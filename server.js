@@ -29,7 +29,7 @@ if(process.env.NODE_ENV === "development") {
     webpackConfig.plugins = webpackConfig.plugins.concat([
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ]);
     const compiler = webpack(webpackConfig);
     app.use(require("webpack-dev-middleware")(compiler, {
