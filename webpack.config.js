@@ -35,8 +35,7 @@ module.exports = {
                 loader: "file-loader",
                 query: {
                     name: "[name].[ext]",
-                    publicPath: "/static/",
-                    outputPath: path.resolve(__dirname, "static")
+                    publicPath: "/static/"
                 }
             }
         ]
