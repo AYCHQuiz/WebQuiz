@@ -10,26 +10,23 @@
 [![Sauce Test Status](https://saucelabs.com/browser-matrix/web-quiz.svg)](https://saucelabs.com/u/web-quiz)
 
 ## Features
-* Basic multiple choice questions
-    * :radio_button: single answer
-    * :ballot_box_with_check: multiple answer
+* Multiple choice questions
+    * :radio_button: single correct answer
+    * :ballot_box_with_check: multiple correct answers
 * :1234: Support for numerical problems with a tolerance region for the correct answers
-* Plot and LaTeX rendering
-* :heavy_plus_sign: First-class latex math support (enclosed in `$`)
+* :heavy_plus_sign: First-class LaTeX math support (enclosed in `$`)
 * :racehorse: Mobile-first, responsive web design
 * :cloud: Lightweight question specification in YAML
-* Configurable multi-language support:
-    * :uk: English
-    * :de: German
-    * :ru: Russian
-    * :es: Spanish
+* Configurable multi-language support: :uk:, :de:,:ru:, :es:
 
 ## Installation
 
 Requirements: Node.js >= 6.x
 
-We use :smiley_cat: [Yarn](https://yarnpkg.com/) for package management.
+We use [Yarn](https://yarnpkg.com/) for package management.
 Please install it as described [here](https://yarnpkg.com/en/docs/install).
+
+### Development run
 
 ```sh
 git clone https://github.com/tum-rt/web-quiz.git
@@ -38,8 +35,11 @@ yarn
 npm run dev
 ```
 
-## Production run
+### Production run
 ```sh
+git clone https://github.com/tum-rt/web-quiz.git
+cd web-quiz
+yarn
 npm run buildp
 export NODE_ENV=production
 node server.js example-quiz
@@ -59,9 +59,9 @@ node server.js example-quiz
 | `npm run karma`       | run front-end browser tests once                               |
 | `npm run karma-watch` | run front-end browser tests, let browsers open and watch files |
 
-## Custom quiz questions
-Create an empty folder and with a file called `_config.yml`. This is the
-main configuration file for your quiz.
+## Creating a quiz
+Create an empty folder and place a file named `_config.yml` inside of it.
+This is the main configuration file for your quiz.
 
 ```yaml
 url: https://example.com # the publicly available scheme+domain of the quiz
@@ -75,13 +75,14 @@ footer: Put a custom footer here. You may use any <i>kind of HTML</i>.
 about: Put a custom about text here. You may use any HTML.
 ```
 
-Now you can add any question files.
+Now you can add question files.
 
 Each question file must end in `.yml`.
 They can be directly placed in your directory or in any sub-directory that does
 not start with a dot (e.g. `.cache`).
+See the [spec](https://github.com/tum-rt/web-quiz/tree/master/spec) for further details.
 
-A question file is written in YAML and look like this:
+A question file is written in YAML and it looks like this:
 
 ```yaml
 uid: put_a_unique_identifier_string_here
@@ -93,7 +94,7 @@ content:
     correct_answer:
     - JavaScript
     wrong_answers:
-    - Golang
+    - Go
     - Python
     - Groovy
 - separator
@@ -112,7 +113,7 @@ content:
 
 You can find further examples in the `example-quiz` folder of this project.
 
-## Docker Quickstart
+## Docker quickstart
 
 ```sh
 git clone https://github.com/tum-rt/web-quiz.git
