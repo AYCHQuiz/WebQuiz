@@ -56,6 +56,7 @@ node server.js example-quiz
 | `npm run doc`         | generate API documentation, see `./apidoc/index.html`          |
 | `npm run test`        | runs backend unit tests                                        |
 | `npm run coverage`    | runs backend unit tests with coverage                          |
+| `npm run lint`        | lint JavaScript files                                          |
 | `npm run karma`       | run front-end browser tests once                               |
 | `npm run karma-watch` | run front-end browser tests, let browsers open and watch files |
 

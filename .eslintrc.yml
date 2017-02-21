@@ -1,0 +1,13 @@
+env:
+  es6: true
+  node: true
+extends: "eslint:recommended"
+rules:
+  no-console: off
+  indent: ["error", 4]
+  quotes: ["error", "double", {avoidEscape: true}]
+  semi: ["error", "always"]
+  max-len: ["error", 80]
+  curly: ["error", "all"]
+  eqeqeq: ["error", "always"]
+  no-unused-vars: ["error"]
