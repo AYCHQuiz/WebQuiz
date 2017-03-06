@@ -14,11 +14,13 @@ div.divider {
     padding: .7rem 0rem;
     font-weight: bold;
     display: inline;
+    vertical-align: middle;
 }
 
 .nav-icon {
     height: 3rem;
     margin-right: 1rem;
+    vertical-align: middle;
 }
 
 .quiz-answer-box {
