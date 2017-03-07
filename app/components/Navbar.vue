@@ -27,6 +27,6 @@ export default {}
     z-index: 1000;
     top: 0;
     background-color: white;
-    border-bottom: 1px solid ;
+    border-bottom: 1px solid black;
 }
 </style>
