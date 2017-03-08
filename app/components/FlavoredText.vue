@@ -1,7 +1,7 @@
 <template>
-    <span>
+    <span class="va-middle" :class="clazz">
         <template v-for="partial in content">
-            <span v-if="partial.text" class="va-middle">{{ partial.text }}</span>
+            <template v-if="partial.text">{{ partial.text }}</template>
             <img v-if="partial.math" :src="buildUrl(partial.math)" class="va-middle" />
         </template>
     </span>
@@ -16,7 +16,7 @@ const regexIndexOf = (str, regex, startpos) => {
 const replaceEscapes = (text) => text.replace(/\\\$/g, "$$");
 
 export default {
-    props: ["value"],
+    props: ["value", "clazz"],
     data() {
         return {
             content: []

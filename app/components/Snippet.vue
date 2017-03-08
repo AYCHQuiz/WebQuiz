@@ -21,22 +21,18 @@
         </span>
     </div>
     <div v-if="snippet.task_text" class="input-group">
-        <span v-if="snippet.task_text.before" class="input-group-addon">
-            <fl-text :value="snippet.task_text.before" />
-        </span>
+        <fl-text v-if="snippet.task_text.before"
+            :value="snippet.task_text.before" clazz="input-group-addon" />
         <input type="text" class="form-input" v-model="taskText">
-        <span v-if="snippet.task_text.after" class="input-group-addon">
-            <fl-text :value="snippet.task_text.after" />
-        </span>
+        <fl-text v-if="snippet.task_text.after"
+            :value="snippet.task_text.after" clazz="input-group-addon" />
     </div>
     <div v-if="snippet.task_number" class="input-group">
-        <span v-if="snippet.task_number.before" class="input-group-addon">
-            <fl-text :value="snippet.task_number.before" />
-        </span>
+        <fl-text v-if="snippet.task_number.before"
+            :value="snippet.task_number.before" clazz="input-group-addon" />
         <input type="number" class="form-input" v-model="taskNumber">
-        <span v-if="snippet.task_number.after" class="input-group-addon">
-            <fl-text :value="snippet.task_number.after" />
-        </span>
+        <fl-text v-if="snippet.task_number.after"
+            :value="snippet.task_number.after" clazz="input-group-addon" />
     </div>
     <template v-if="snippet.task_mc_multiple_correct">
         <div v-for="(answer, answerIndex) in snippet.task_mc_multiple_correct.answers"

@@ -1,15 +1,13 @@
 <template>
 <div class="input-group">
-    <span v-if="snippet.before" class="input-group-addon">
-        <fl-text :value="snippet.before" />
-    </span>
+    <fl-text v-if="snippet.before" :value="snippet.before"
+        clazz="input-group-addon" />
     <input readonly :value="snippet.user_answer" class="form-input"
         :style="style"/>
     <input readonly :value="answer" class="form-input"
         v-if="!snippet.user_correct" />
-    <span v-if="snippet.after" class="input-group-addon">
-        <fl-text :value="snippet.after" />
-    </span>
+    <fl-text v-if="snippet.after" :value="snippet.after"
+        clazz="input-group-addon" />
 </div>
 </template>
 
