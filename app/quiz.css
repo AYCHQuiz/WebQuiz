@@ -48,3 +48,10 @@ div.divider {
 h3 {
     margin-top: 2rem;
 }
+
+/* Fix for #34 */
+[disabled], .disabled {
+    cursor: default;
+    opacity: .5;
+    pointer-events: none;
+}
