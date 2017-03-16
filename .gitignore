@@ -4,6 +4,7 @@ apidoc/
 coverage/
 static/
 npm-debug.log
+yarn-error.log
 
 
 rt_prod/
