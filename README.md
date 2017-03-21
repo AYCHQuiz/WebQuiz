@@ -122,3 +122,15 @@ cd web-quiz
 docker build -t web-quiz .
 docker run --rm -it -p 3000:3000 web-quiz
 ```
+
+## Contributions to other projects
+
+### picturepan2/spectre
+- [Issue 156](https://github.com/picturepan2/spectre/issues/156)
+
+### kazupon/vue-i18n
+- [Issue 109](https://github.com/kazupon/vue-i18n/issues/109)
+- [PR 110](https://github.com/kazupon/vue-i18n/pull/110)
+
+### apertureless/vue-chartjs
+- [Issue 22](https://github.com/apertureless/vue-chartjs/issues/22)
