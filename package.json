@@ -31,7 +31,7 @@
     "mkdirp": "^0.5.1",
     "pug": "^2.0.0-beta6",
     "spectre.css": "^0.2.9",
-    "style-loader": "^0.14.1",
+    "style-loader": "^0.15.0",
     "svgo": "^0.7.1",
     "ts-loader": "^2.0.0",
     "typescript": "^2.2.1",
