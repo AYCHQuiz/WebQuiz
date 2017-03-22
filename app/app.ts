@@ -16,14 +16,20 @@ prewarmTagsWithCountCache([], JSON.parse(document.getElementById("tags_with_coun
 document.title = config.title;
 
 Vue.use(VueI18n);
-(<any>Vue.config).lang = config.lang;
-(<any>Vue).locale("en", require("json-loader!./i18n/en.json"));
-(<any>Vue).locale("de", require("json-loader!./i18n/de.json"));
-(<any>Vue).locale("ru", require("json-loader!./i18n/ru.json"));
-(<any>Vue).locale("es", require("json-loader!./i18n/es.json"));
-(<any>Vue).locale("bar", require("json-loader!./i18n/bar.json"));
 
-new Vue({
+const i18n = new VueI18n({
+    locale: config.lang,
+    messages: {
+        "en": require("json-loader!./i18n/en.json"),
+        "de": require("json-loader!./i18n/de.json"),
+        "ru": require("json-loader!./i18n/ru.json"),
+        "es": require("json-loader!./i18n/es.json"),
+        "bar": require("json-loader!./i18n/bar.json"),
+    }
+});
+
+new Vue(<Vue.ComponentOptions<Vue>>{
+    i18n: i18n,
     el: "#app",
     //components: { App },
     render: h => h(App)
