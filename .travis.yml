@@ -35,4 +35,4 @@ script:
   - if [ "$TRAVIS_NODE_VERSION" = "6" ]; then npm run saucelabs; fi
 
 after_success:
-  - npm run publish_to_coveralls
+  - if [ "$TRAVIS_NODE_VERSION" = "6" ]; then npm run publish_to_coveralls; fi
