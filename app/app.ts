@@ -6,9 +6,9 @@ require("./fontello/css/webquiz.css");
 require("./quiz.css");
 
 import Vue from "vue";
+import VueI18n from "vue-i18n";
 import config from "./config";
 import {prewarmTagsWithCountCache} from "./api";
-const VueI18n = require("vue-i18n");
 const App = require("./components/App.vue").default;
 
 prewarmTagsWithCountCache([], JSON.parse(document.getElementById("tags_with_count").innerHTML));
