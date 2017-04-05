@@ -36,7 +36,7 @@
     "ts-loader": "^2.0.0",
     "typescript": "^2.2.1",
     "vue": "^2.2.4",
-    "vue-i18n": "^5.0.2",
+    "vue-i18n": "^6.0.0",
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "^2.2.4",
     "vue-ts-loader": "0.0.3",
