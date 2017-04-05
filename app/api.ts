@@ -32,14 +32,14 @@ function ajax(method: string, url: string, params: { [key:string]:string; }, cal
 const tagsWithCountCache = {}; // in-memory cache
 
 export function getTagsWithCount(tags: string[], callback: (err, data?)=>void) {
-    const key = tags.join("|");
+    const key = JSON.stringify(tags);
     if(tagsWithCountCache[key]) {
         // found value in cache
         callback(null, tagsWithCountCache[key]);
     } else {
         // did not found value in cache
         ajax("GET", "/api/tags_with_count", {
-            tags: tags.join("|")
+            tags: JSON.stringify(tags)
         }, (err, data) => {
             if(err) {
                 callback(err);
@@ -52,11 +52,11 @@ export function getTagsWithCount(tags: string[], callback: (err, data?)=>void) {
 }
 
 export function prewarmTagsWithCountCache(tags: string[], data) {
-    tagsWithCountCache[tags.join("|")] = data;
+    tagsWithCountCache[JSON.stringify(tags)] = data;
 }
 
 export function getQuiz(tags: string[], callback: (err, data?)=>void) {
     ajax("GET", "/api/quiz", {
-        tags: tags.join("|")
+        tags: JSON.stringify(tags)
     }, callback);
 }
