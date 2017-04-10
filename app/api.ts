@@ -16,6 +16,9 @@ function ajax(method: string, url: string, params: { [key:string]:string; }, cal
         }
         callback(null, response.data);
     });
+    req.addEventListener("error", () => {
+        callback("Network Error");
+    });
     let query = "";
     for(let key in params) {
         if(query === "") {

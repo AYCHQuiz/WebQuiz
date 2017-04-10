@@ -25,6 +25,11 @@
         <p class="mt-10">
             {{ $tc("there_are_x_questions", numQuestions, {count: numQuestions}) }}
         </p>
+        <template v-if="showError">
+            <div class="toast toast-danger mb-5">
+                Network Error
+            </div>
+        </template>
         <button type="submit" class="btn btn-primary btn-block"
             @click="startQuiz" :disabled="startDisabled">{{ $t("start_quiz") }}
         </button>
@@ -43,7 +48,7 @@ const Navbar = require("./Navbar.vue").default;
 const Dialog = require("./Dialog.vue").default;
 
 import config from "../config";
-import {getTagsWithCount} from "../api";
+import {getTagsWithCount, getQuiz} from "../api";
 
 export default {
     data() {
@@ -54,22 +59,33 @@ export default {
             selectedTags: [],
             startDisabled: true,
             numQuestions: 0,
-            showAboutDialog: false
+            showAboutDialog: false,
+            showError: false
         };
     },
     methods: {
         startQuiz() {
-            this.$emit('start', this.selectedTags.slice());
+            getQuiz(this.selectedTags, (err, data) => {
+                if(err) {
+                    console.error("API failed: /api/quiz", err);
+                    this.showError = true;
+                    return;
+                }
+
+                this.$emit('start', data);
+            });
         },
         updateTags(userSelectedTags) {
             getTagsWithCount(userSelectedTags, (err, data) => {
                 if(err) {
                     console.error("API failed: /api/tags_with_count", err);
+                    this.showError = true;
                     return;
                 }
                 this.tags = data.tags;
                 this.numQuestions = data.total;
                 this.startDisabled = this.numQuestions === 0;
+                //this.showError = false;
             });
         },
         showAbout() {

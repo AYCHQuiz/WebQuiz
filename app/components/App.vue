@@ -18,7 +18,6 @@ const Question = require('./Question.vue').default;
 const Evaluation = require('./Evaluation.vue').default;
 
 import config from "../config";
-import {getQuiz} from "../api";
 
 const STATE_KEY = "state"; // Key to use in localStorage
 const STATE_VERSION = 1;   // Only load states of the same version
@@ -37,20 +36,14 @@ export default {
         this.loadState();
     },
     methods: {
-        start(tags) {
-            getQuiz(tags, (err, data) => {
-                if(err) {
-                    console.error("API failed: /api/quiz", err);
-                    return;
-                }
-                this.questions = data;
-                this.currentQuestion = this.questions[0];
-                this.currentQuestionIndex = 0;
-                this.allAnswers = [];
-                this.show = "question";
-                this.scrollUp();
-                this.saveState();
-            });
+        start(data) {
+            this.questions = data;
+            this.currentQuestion = this.questions[0];
+            this.currentQuestionIndex = 0;
+            this.allAnswers = [];
+            this.show = "question";
+            this.scrollUp();
+            this.saveState();
         },
         next(answers) {
             // HACK: force rendering on Question component
