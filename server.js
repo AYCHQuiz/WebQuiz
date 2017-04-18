@@ -10,16 +10,16 @@ app.disable("x-powered-by");
 
 app.use(compression());
 
-if(process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "development") {
     // Special configuration for development mode
     // Hot-Module-Reload enables reloading of Vue components on the fly
     const webpack = require("webpack");
     const webpackConfig = require("./webpack.config.js");
-    if(!Array.isArray(webpackConfig.entry)) {
+    if (!Array.isArray(webpackConfig.entry)) {
         webpackConfig.entry = [webpackConfig.entry];
     }
     webpackConfig.entry.push("webpack-hot-middleware/client");
-    if(!Array.isArray(webpackConfig.plugins)) {
+    if (!Array.isArray(webpackConfig.plugins)) {
         webpackConfig.plugins = [];
     }
     webpackConfig.plugins = webpackConfig.plugins.concat([
@@ -42,7 +42,7 @@ const port = process.env.PORT || 3000;
 
 console.log("NODE_ENV: %s", process.env.NODE_ENV);
 
-if(process.env.NODE_ENV !== "test") {
+if (process.env.NODE_ENV !== "test") {
     app.listen(port, function() {
         console.log("web-quiz listening on port %d", port);
     });

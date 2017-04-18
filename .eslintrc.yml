@@ -11,3 +11,4 @@ rules:
   curly: ["error", "all"]
   eqeqeq: ["error", "always"]
   no-unused-vars: ["error"]
+  keyword-spacing: ["error", {before: true, after: true}]
