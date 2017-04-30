@@ -13,3 +13,4 @@ rules:
   no-unused-vars: ["error"]
   keyword-spacing: ["error", {before: true, after: true}]
   space-before-blocks: ["error"]
+  comma-dangle: ["error", "always-multiline"]

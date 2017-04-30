@@ -25,11 +25,11 @@ if (process.env.NODE_ENV === "development") {
     webpackConfig.plugins = webpackConfig.plugins.concat([
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
     ]);
     const compiler = webpack(webpackConfig);
     app.use(require("webpack-dev-middleware")(compiler, {
-        publicPath: webpackConfig.output.publicPath
+        publicPath: webpackConfig.output.publicPath,
     }));
     app.use(require("webpack-hot-middleware")(compiler));
 } else {

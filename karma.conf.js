@@ -10,14 +10,14 @@ module.exports = function (config) {
         files: ["app/test/index.js"],
         // we will pass the entry file to webpack for bundling.
         preprocessors: {
-            "app/test/index.js": ["webpack"]
+            "app/test/index.js": ["webpack"],
         },
         // use the webpack config
         webpack: webpackConfig,
         // avoid walls of useless text
         webpackMiddleware: {
-            noInfo: true
+            noInfo: true,
         },
-        singleRun: true
+        singleRun: true,
     });
 };

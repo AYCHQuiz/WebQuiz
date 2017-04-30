@@ -15,14 +15,14 @@ module.exports = function (config) {
             browserName: "Safari",
             platform: "iOS",
             version: "9.3",
-            device: "iPhone 6"
+            device: "iPhone 6",
         },
         sl_ios_safari_8: {
             base: "SauceLabs",
             browserName: "Safari",
             platform: "iOS",
             version: "8.4",
-            device: "iPhone 6"
+            device: "iPhone 6",
         },
         sl_android_5: {
             base: "SauceLabs",
@@ -35,38 +35,38 @@ module.exports = function (config) {
             base: "SauceLabs",
             browserName: "chrome",
             platform: "Windows 10",
-            version: "55.0"
+            version: "55.0",
         },
         sl_firefox: {
             base: "SauceLabs",
             browserName: "firefox",
             platform: "Windows 10",
-            version: "50"
+            version: "50",
         },
         sl_safari_10: {
             base: "SauceLabs",
             browserName: "safari",
             platform: "OS X 10.11",
-            version: "10"
+            version: "10",
         },
         sl_safari_9: {
             base: "SauceLabs",
             browserName: "safari",
             platform: "OS X 10.11",
-            version: "9"
+            version: "9",
         },
         sl_edge_14: {
             base: "SauceLabs",
             browserName: "MicrosoftEdge",
             platform: "Windows 10",
-            version: "14"
+            version: "14",
         },
         sl_edge_13: {
             base: "SauceLabs",
             browserName: "MicrosoftEdge",
             platform: "Windows 10",
-            version: "13"
-        }
+            version: "13",
+        },
     };
 
     config.set({
@@ -74,7 +74,7 @@ module.exports = function (config) {
         customLaunchers: customLaunchers,
         reporters: ["dots", "saucelabs"],
         sauceLabs: {
-            testName: "Web-Quiz Component Tests"
+            testName: "Web-Quiz Component Tests",
         },
         // How many browsers Karma launches in parallel.
         // (prevent overload in saucelabs)
@@ -86,14 +86,14 @@ module.exports = function (config) {
         files: ["app/test/index.js"],
         // we will pass the entry file to webpack for bundling.
         preprocessors: {
-            "app/test/index.js": ["webpack"]
+            "app/test/index.js": ["webpack"],
         },
         // use the webpack config
         webpack: webpackConfig,
         // avoid walls of useless text
         webpackMiddleware: {
-            noInfo: true
+            noInfo: true,
         },
-        singleRun: true
+        singleRun: true,
     });
 };
