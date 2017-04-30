@@ -1,16 +1,17 @@
-declare var require: any;
+/* tslint:disable:object-literal-sort-keys */
+declare const require: any;
 
 import Vue from "vue";
 const FlavoredText = require("../components/FlavoredText.vue").default;
 import { expect } from "chai";
 
 describe("FlavoredText.vue", () => {
-    const buildFlText = (value, clazz="") => {
+    const buildFlText = (value, clazz= "") => {
         return new Vue({
-            render: function(h) {
+            render: (h) => {
                 return h(FlavoredText, { props: { value, clazz } });
             },
-            components: { "fl-text": FlavoredText }
+            components: { "fl-text": FlavoredText },
         }).$mount();
     };
 
@@ -55,14 +56,17 @@ describe("FlavoredText.vue", () => {
     it("should allow a single additional CSS class", () => {
         const vm = buildFlText("Click me", "button");
 
+        /* tslint:disable-next-line:no-unused-expression */
         expect(vm.$el.classList.contains("button")).to.be.true;
     });
 
     it("should allow multiple additional CSS classes", () => {
         const vm = buildFlText("Click me", "super awesome mega");
 
+        /* tslint:disable:no-unused-expression */
         expect(vm.$el.classList.contains("super")).to.be.true;
         expect(vm.$el.classList.contains("awesome")).to.be.true;
         expect(vm.$el.classList.contains("mega")).to.be.true;
+        /* tslint:enable:no-unused-expression */
     });
 });

@@ -1,4 +1,4 @@
-interface QuizConfig {
+interface IQuizConfig {
     url: string;
     title: string;
     description: string;
@@ -9,4 +9,4 @@ interface QuizConfig {
 }
 
 // Parse JSON from script tag with id 'config'
-export default <QuizConfig>(JSON.parse(document.getElementById("config").innerHTML));
+export default (JSON.parse(document.getElementById("config").innerHTML)) as IQuizConfig;

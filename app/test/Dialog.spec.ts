@@ -1,4 +1,5 @@
-declare var require: any;
+/* tslint:disable:object-literal-sort-keys */
+declare const require: any;
 
 import Vue from "vue";
 const Dialog = require("../components/Dialog.vue").default;
@@ -7,18 +8,18 @@ import { expect } from "chai";
 describe("Dialog.vue", () => {
     it("should render correct contents", () => {
         const vm = new Vue({
-            render: function(h) {
+            render: (h) => {
                 return h(Dialog, {
                     props: {
                         title: "Karma",
                         positiveText: "OK",
-                        negativeText: "Cancel"
-                    }
+                        negativeText: "Cancel",
+                    },
                 }, [
-                    h("span", "Close this chapter?")
+                    h("span", "Close this chapter?"),
                 ]);
             },
-            components: { "quiz-dialog": Dialog }
+            components: { "quiz-dialog": Dialog },
         }).$mount();
         expect(vm.$el.querySelector(".modal-title").textContent).to.equal("Karma");
         expect(vm.$el.querySelector("button:not(.btn-primary)").textContent).to.equal("Cancel");
@@ -28,61 +29,61 @@ describe("Dialog.vue", () => {
 
     it("should forward positive button click", (done) => {
         const vm = new Vue({
-            render: function(h) {
+            render: (h) => {
                 return h(Dialog, {
                     props: {
-                        positiveText: "OK"
+                        positiveText: "OK",
                     },
                     on: {
                         click: (option) => {
                             expect(option).to.equal("positive");
                             done();
-                        }
-                    }
+                        },
+                    },
                 });
             },
-            components: { "quiz-dialog": Dialog }
+            components: { "quiz-dialog": Dialog },
         }).$mount();
 
-        (<HTMLElement>vm.$el.querySelector("button.btn-primary")).click();
+        (vm.$el.querySelector("button.btn-primary") as HTMLElement).click();
     });
 
     it("should forward negative button click", (done) => {
         const vm = new Vue({
-            render: function(h) {
+            render: (h) => {
                 return h(Dialog, {
                     props: {
-                        negativeText: "Cancel"
+                        negativeText: "Cancel",
                     },
                     on: {
                         click: (option) => {
                             expect(option).to.equal("negative");
                             done();
-                        }
-                    }
+                        },
+                    },
                 });
             },
-            components: { "quiz-dialog": Dialog }
+            components: { "quiz-dialog": Dialog },
         }).$mount();
 
-        (<HTMLElement>vm.$el.querySelector("button:not(.btn-primary)")).click();
+        (vm.$el.querySelector("button:not(.btn-primary)") as HTMLElement).click();
     });
 
     it("should trigger negative action when clicking overlay", (done) => {
         const vm = new Vue({
-            render: function(h) {
+            render: (h) => {
                 return h(Dialog, {
                     on: {
                         click: (option) => {
                             expect(option).to.equal("negative");
                             done();
-                        }
-                    }
+                        },
+                    },
                 });
             },
-            components: { "quiz-dialog": Dialog }
+            components: { "quiz-dialog": Dialog },
         }).$mount();
 
-        (<HTMLElement>vm.$el.querySelector(".modal-overlay")).click();
+        (vm.$el.querySelector(".modal-overlay") as HTMLElement).click();
     });
 });

@@ -1,4 +1,5 @@
-declare var require: any;
+/* tslint:disable:object-literal-sort-keys */
+declare const require: any;
 
 import Vue from "vue";
 const Snippet = require("../components/Snippet.vue").default;
@@ -7,16 +8,16 @@ import { expect } from "chai";
 describe("Snippet.vue", () => {
     const buildSnippet = (snippet) => {
         return new Vue({
-            render: function(h) {
+            render: (h) => {
                 return h(Snippet, { props: { snippet }});
             },
-            components: { "snippet": Snippet }
+            components: { snippet: Snippet },
         }).$mount();
     };
 
     it("should render text snippet", () => {
         const vm = buildSnippet({
-            text: "Karma"
+            text: "Karma",
         });
 
         expect(vm.$el.textContent.trim()).to.equal("Karma");
@@ -24,7 +25,7 @@ describe("Snippet.vue", () => {
 
     it("should render header1 snippet", () => {
         const vm = buildSnippet({
-            header1: "Big header"
+            header1: "Big header",
         });
 
         expect(vm.$el.textContent.trim()).to.equal("Big header");
@@ -32,7 +33,7 @@ describe("Snippet.vue", () => {
 
     it("should render header2 snippet", () => {
         const vm = buildSnippet({
-            header2: "Medium header"
+            header2: "Medium header",
         });
 
         expect(vm.$el.textContent.trim()).to.equal("Medium header");
@@ -40,7 +41,7 @@ describe("Snippet.vue", () => {
 
     it("should render header3 snippet", () => {
         const vm = buildSnippet({
-            header3: "Small header"
+            header3: "Small header",
         });
 
         expect(vm.$el.textContent.trim()).to.equal("Small header");
@@ -50,10 +51,11 @@ describe("Snippet.vue", () => {
         const vm = buildSnippet({
             image: {
                 description: "Image Snippet",
-                source_1x: "/graph.png"
-            }
+                source_1x: "/graph.png",
+            },
         });
 
+        /* tslint:disable-next-line:no-unused-expression */
         expect(vm.$el.querySelector("img")).to.not.be.null;
         expect(vm.$el.querySelector("img").alt).to.equal("Image Snippet");
         expect(vm.$el.querySelector("img").src).to.contain("/graph.png");
@@ -64,10 +66,11 @@ describe("Snippet.vue", () => {
             task_text: {
                 before: "His name is ",
                 after: "Mustermann",
-                correct_answers: ["Max"]
-            }
+                correct_answers: ["Max"],
+            },
         });
 
+        /* tslint:disable-next-line:no-unused-expression */
         expect(vm.$el.querySelector("input[type=text]")).to.not.be.null;
         expect(vm.$el.textContent).to.contain("His name is");
         expect(vm.$el.textContent).to.contain("Mustermann");
@@ -79,10 +82,11 @@ describe("Snippet.vue", () => {
                 before: "theta =",
                 after: "Kelvin",
                 correct_answer: 12,
-                abs_tol: 1
-            }
+                abs_tol: 1,
+            },
         });
 
+        /* tslint:disable-next-line:no-unused-expression */
         expect(vm.$el.querySelector("input[type=number]")).to.not.be.null;
         expect(vm.$el.textContent).to.contain("theta =");
         expect(vm.$el.textContent).to.contain("Kelvin");
@@ -95,9 +99,9 @@ describe("Snippet.vue", () => {
                     { value: "A", correct: false },
                     { value: "B", correct: true },
                     { value: "C", correct: false },
-                    { value: "D", correct: false }
-                ]
-            }
+                    { value: "D", correct: false },
+                ],
+            },
         });
 
         expect(vm.$el.querySelectorAll("input[type=radio]")).to.have.lengthOf(4);
@@ -113,9 +117,9 @@ describe("Snippet.vue", () => {
                 answers: [
                     { value: "12", correct: false },
                     { value: "34", correct: true },
-                    { value: "56", correct: true }
-                ]
-            }
+                    { value: "56", correct: true },
+                ],
+            },
         });
 
         expect(vm.$el.querySelectorAll("input[type=checkbox]")).to.have.lengthOf(3);

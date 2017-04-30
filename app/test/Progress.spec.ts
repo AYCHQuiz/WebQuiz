@@ -1,4 +1,5 @@
-declare var require: any;
+/* tslint:disable:object-literal-sort-keys */
+declare const require: any;
 
 import Vue from "vue";
 const Progress = require("../components/Progress.vue").default;
@@ -7,17 +8,17 @@ import { expect } from "chai";
 describe("Progress.vue", () => {
     const buildProgress = (value, max) => {
         return new Vue({
-            render: function(h) {
+            render: (h) => {
                 return h(Progress, { props: { value, max } });
             },
-            components: { "quiz-progress": Progress }
+            components: { "quiz-progress": Progress },
         }).$mount();
     };
 
     it("should render correct bar length", () => {
         const vm = buildProgress(1, 10);
 
-        expect((<HTMLElement>vm.$el.querySelector(".progress-bar")).style.width).to.equal("10%");
+        expect((vm.$el.querySelector(".progress-bar") as HTMLElement).style.width).to.equal("10%");
     });
 
     it("should display current state", () => {
