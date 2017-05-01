@@ -13,8 +13,7 @@
     "test": "mocha lib/test",
     "karma": "karma start karma.conf.js --single-run",
     "karma-watch": "karma start karma.conf.js --no-single-run",
-    "lint": "eslint ./",
-    "tslint": "tslint -c tslint.json 'app/**/*.ts'",
+    "lint": "eslint ./ && tslint -c tslint.json 'app/**/*.ts'",
     "saucelabs": "karma start karma-saucelabs.conf.js",
     "coverage": "istanbul cover _mocha --report lcovonly -- lib/test",
     "publish_to_coveralls": "cat ./coverage/lcov.info | coveralls"
