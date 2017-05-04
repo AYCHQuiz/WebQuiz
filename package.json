@@ -14,6 +14,7 @@
     "karma": "karma start karma.conf.js --single-run",
     "karma-watch": "karma start karma.conf.js --no-single-run",
     "lint": "eslint ./ && tslint -c tslint.json 'app/**/*.ts'",
+    "stylelint": "stylelint --config .stylelintrc app/*.css app/components/*.vue",
     "saucelabs": "karma start karma-saucelabs.conf.js",
     "coverage": "istanbul cover _mocha --report lcovonly -- lib/test",
     "publish_to_coveralls": "cat ./coverage/lcov.info | coveralls"
@@ -32,6 +33,7 @@
     "pug": "^2.0.0-beta6",
     "spectre.css": "^0.2.12",
     "style-loader": "^0.16.1",
+    "stylelint": "^7.10.1",
     "svgo": "^0.7.1",
     "ts-loader": "^2.0.3",
     "typescript": "^2.3.1",
