@@ -20,14 +20,14 @@
             <fl-text :value="snippet.hint" />
         </span>
     </div>
-    <div v-if="snippet.task_text" class="input-group">
+    <div v-if="snippet.task_text" class="input-group mt-10">
         <fl-text v-if="snippet.task_text.before"
             :value="snippet.task_text.before" clazz="input-group-addon" />
         <input type="text" class="form-input" v-model="taskText">
         <fl-text v-if="snippet.task_text.after"
             :value="snippet.task_text.after" clazz="input-group-addon" />
     </div>
-    <div v-if="snippet.task_number" class="input-group">
+    <div v-if="snippet.task_number" class="input-group mt-10">
         <fl-text v-if="snippet.task_number.before"
             :value="snippet.task_number.before" clazz="input-group-addon" />
         <input type="number" class="form-input" v-model="taskNumber">
