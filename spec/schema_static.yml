@@ -44,6 +44,7 @@ image_attributes:
     source_1x: str()
     source_2x: str(required=False)
     source_4x: str(required=False)
+    width: num(min=0, max=100, required=False)
 
 # Task: Multiple choice, one correct answer
 task_chunk_mc_one_correct:
