@@ -29,6 +29,7 @@
     "json-loader": "^0.5.4",
     "mathjax-node": "^1.1.0",
     "mkdirp": "^0.5.1",
+    "prepack-webpack-plugin": "^1.1.0",
     "pug": "^2.0.0-rc.1",
     "spectre.css": "^0.2.12",
     "style-loader": "^0.17.0",

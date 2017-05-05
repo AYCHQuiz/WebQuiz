@@ -1,4 +1,5 @@
 const path = require("path");
+const PrepackWebpackPlugin = require("prepack-webpack-plugin").default;
 
 module.exports = {
     entry: "./app/app.ts",
@@ -40,4 +41,9 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new PrepackWebpackPlugin({
+            test: /\.js($|\?)/i,
+        }),
+    ],
 };
