@@ -1,0 +1,22 @@
+# All images are CC0 (public domain)
+
+uid: animals_image_scaling
+tags: [animals]
+content:
+- header1: Which of these animals is larger in real life?
+- hint: You can specify image width using the 'width' key in your YAML file!
+- image:
+    description: A small rodent
+    # https://pixabay.com/en/alert-animal-cute-fur-hair-look-165009/
+    source_1x: https://syncandshare.lrz.de/dl/fiDpxA7oU6XqhTFufgGhcgnm/meerkat.jpg
+    width: 100
+- image:
+    description: A group of marine mammals
+    # https://pixabay.com/en/killer-whales-orcas-breaching-591130/
+    source_1x: https://syncandshare.lrz.de/dl/fiCSc9QVE3zDUmYWLrJ7xYtL/orcas.jpg
+    width: 50
+- task_mc_one_correct:
+    correct_answer:
+    - Orca
+    wrong_answers:
+    - Meerkat
