@@ -31,7 +31,7 @@ const i18n = new VueI18n({
 
 /* tslint:disable-next-line:no-unused-expression */
 new Vue({
-    i18n,
     el: "#app",
+    i18n,
     render: (h) => h(App),
 } as Vue.ComponentOptions<Vue>);
