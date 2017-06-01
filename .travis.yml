@@ -1,14 +1,12 @@
 language: node_js
 node_js:
-  - "4"
-  - "5"
   - "6"
   - "7"
+  - "8"
 
 matrix:
   allow_failures:
-    - node_js: "4"
-    - node_js: "5"
+    - node_js: "7"
 
 sudo: false
 
@@ -32,7 +30,7 @@ script:
   - npm run doc
   - npm run coverage
   - npm run lint
-  - if [ "$TRAVIS_NODE_VERSION" = "6" ]; then npm run saucelabs; fi
+  - if [ "$TRAVIS_NODE_VERSION" = "8" ]; then npm run saucelabs; fi
 
 after_success:
-  - if [ "$TRAVIS_NODE_VERSION" = "6" ]; then npm run publish_to_coveralls; fi
+  - if [ "$TRAVIS_NODE_VERSION" = "8" ]; then npm run publish_to_coveralls; fi
