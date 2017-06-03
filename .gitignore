@@ -6,5 +6,3 @@ static/
 npm-debug.log
 yarn-error.log
 stats.json
-
-rt_prod/
