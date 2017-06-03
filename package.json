@@ -16,7 +16,8 @@
     "lint": "eslint ./ && tslint -c tslint.json 'app/**/*.ts'",
     "saucelabs": "karma start karma-saucelabs.conf.js",
     "coverage": "istanbul cover _mocha --report lcovonly -- lib/test",
-    "publish_to_coveralls": "cat ./coverage/lcov.info | coveralls"
+    "publish_to_coveralls": "cat ./coverage/lcov.info | coveralls",
+    "export_stats": "webpack --json > stats.json"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
