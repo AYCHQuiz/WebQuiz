@@ -8,5 +8,8 @@
             "dom"
         ]
     },
+    "include": [
+        "node_modules/@types"
+    ],
     "compileOnSave": false
 }
