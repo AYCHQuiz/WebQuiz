@@ -55,7 +55,7 @@
     "chai": "^4.0.2",
     "chai-http": "^3.0.0",
     "coveralls": "^2.13.1",
-    "eslint": "^3.19.0",
+    "eslint": "^4.2.0",
     "istanbul": "^0.4.5",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
