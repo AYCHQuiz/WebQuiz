@@ -41,7 +41,14 @@ export default {
         scrollTo(index) {
             const questionHeader = this.$refs.header[index];
             const NAVBAR_HEIGHT = 60;
-            document.body.scrollTop +=
+
+            // document.body.scrollTop is deprecated.
+            // Instead, document.scrollingElement should be used for Chrome,
+            // Firefox and Edge.
+            // MSIE only supports document.documentElement.
+            // https://miketaylr.com/posts/2014/11/document-body-scrolltop.html
+            // https://developer.mozilla.org/en-US/docs/Web/API/document/scrollingElement
+            (document.scrollingElement || document.documentElement).scrollTop +=
                 questionHeader.getBoundingClientRect().top - NAVBAR_HEIGHT;
         }
     },
