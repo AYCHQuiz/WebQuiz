@@ -5,7 +5,7 @@ require("spectre.css/dist/spectre.min.css");
 require("./fontello/css/webquiz.css");
 require("./quiz.css");
 
-import Vue from "vue";
+import Vue, {ComponentOptions} from "vue";
 import VueI18n from "vue-i18n";
 import {prewarmTagsWithCountCache} from "./api";
 import config from "./config";
@@ -34,4 +34,4 @@ new Vue({
     el: "#app",
     i18n,
     render: (h) => h(App),
-} as Vue.ComponentOptions<Vue>);
+} as ComponentOptions<Vue>);
