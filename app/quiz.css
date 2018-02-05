@@ -1,6 +1,15 @@
+html {
+    font-size: 12px !important;
+}
+
 body {
     padding-top: 70px;
     padding-bottom: 10px;
+}
+
+.container.grid-480 {
+    /* Fix for issue 45: grid-480 was removed in spectre.css 0.5.0 */
+    max-width: 50rem;
 }
 
 div.divider {
