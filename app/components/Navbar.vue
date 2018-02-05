@@ -17,8 +17,10 @@ export default {}
 
 @media screen and (max-width: 499px) {
     .nav {
-        left: 1rem;
-        right: 1rem;
+        left: 0;
+        right: 0;
+        padding-left: 3px;
+        padding-right: 3px;
     }
 }
 
