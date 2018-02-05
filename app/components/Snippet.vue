@@ -30,7 +30,7 @@
     <div v-if="snippet.task_number" class="input-group mt-10">
         <fl-text v-if="snippet.task_number.before"
             :value="snippet.task_number.before" clazz="input-group-addon" />
-        <input type="number" class="form-input" v-model="taskNumber">
+        <input type="number" step="any" class="form-input" v-model="taskNumber">
         <fl-text v-if="snippet.task_number.after"
             :value="snippet.task_number.after" clazz="input-group-addon" />
     </div>
