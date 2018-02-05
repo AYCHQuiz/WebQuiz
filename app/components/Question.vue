@@ -2,11 +2,11 @@
 <div>
     <navbar>
         <div class="columns">
-            <div class="column col-10">
+            <div class="column">
                 <quiz-progress :max="totalNum" :value="currentNum + 1"></quiz-progress>
             </div>
-            <div class="column col-2">
-                <button class="btn float-right" @click="cancel">{{ $t("close") }}</button>
+            <div class="column" style="flex-grow: 0;">
+                <button class="btn" @click="cancel">{{ $t("close") }}</button>
             </div>
         </div>
     </navbar>

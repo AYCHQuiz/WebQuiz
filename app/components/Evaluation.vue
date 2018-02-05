@@ -2,14 +2,14 @@
 <div>
     <navbar>
         <div class="columns">
-            <div class="column col-10">
+            <div class="column">
                 <div class="btn-group btn-group-block">
                     <button  v-for="(question, index) in questions" :key="index"
                         class="btn" @click="scrollTo(index)">{{ index + 1 }}</button>
                 </div>
             </div>
-            <div class="column col-2">
-                <button class="btn float-right" @click="close">{{ $t("close") }}</button>
+            <div class="column" style="flex-grow: 0;">
+                <button class="btn" @click="close">{{ $t("close") }}</button>
             </div>
         </div>
     </navbar>
