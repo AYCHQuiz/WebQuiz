@@ -29,5 +29,7 @@ export default {}
     background-color: white;
     border-bottom: 1px solid black;
     margin: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 </style>

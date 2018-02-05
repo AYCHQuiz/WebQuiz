@@ -1,10 +1,21 @@
 html {
-    font-size: 12px !important;
+    font-size: 10px;
 }
 
 body {
     padding-top: 70px;
     padding-bottom: 10px;
+
+    /* Fix for issue 45: Changed root font size in spectre.css 0.3.1 */
+    font-size: 1.4rem;
+}
+
+.btn {
+    /* Fix for issue 45: Changed root font size in spectre.css 0.3.1 */
+    font-size: 1.4rem;
+    height: 2.8rem;
+    /* Fix for issue 45: Removed border radius for buttons */
+    border-radius: 3px;
 }
 
 .container.grid-480 {
