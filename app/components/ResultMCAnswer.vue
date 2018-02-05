@@ -9,7 +9,7 @@
             <i class="icon-circle-o" v-else></i>
         </template>
         <i class="icon-check" v-if="answer.correct"></i>
-        <i class="icon-check invisible" v-else></i>
+        <i class="icon-check d-invisible" v-else></i>
         <fl-text :value="answer.value" />
     </div>
 </template>
