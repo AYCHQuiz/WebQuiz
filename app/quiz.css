@@ -14,11 +14,13 @@ div.nav {
 
 .nav-title {
     font-size: 2rem;
-    height: 3.2rem;
-    padding: .7rem 0rem;
     font-weight: bold;
-    display: inline;
     vertical-align: middle;
+
+    /* Fix for issue 45: Title wraps around if too long */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .nav-icon {

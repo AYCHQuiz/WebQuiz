@@ -2,12 +2,12 @@
 <div>
     <navbar>
         <div class="columns">
-            <div class="column col-10" style="vertical-align:sub;">
+            <div class="column nav-title" style="vertical-align:sub;">
                 <img class="nav-icon" src="/public/favicon.png">
-                <div class="nav-title">{{ title }}</div>
+                {{ title }}
             </div>
-            <div class="column col-2">
-                <button class="btn btn-link float-right" @click="showAbout">{{ $t("about") }}</button>
+            <div class="column" style="flex-grow: 0;">
+                <button class="btn btn-link" @click="showAbout">{{ $t("about") }}</button>
             </div>
         </div>
     </navbar>
