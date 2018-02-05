@@ -4,19 +4,19 @@ html {
 }
 
 body {
-    padding-top: 70px;
-    padding-bottom: 10px;
-
     /* Fix for issue 45: Changed root font size in spectre.css 0.3.1 */
     font-size: 1.4rem;
+
+    padding-bottom: 10px;
+    padding-top: 70px;
 }
 
 .btn {
+    /* Fix for issue 45: Removed border radius for buttons */
+    border-radius: 3px;
     /* Fix for issue 45: Changed root font size in spectre.css 0.3.1 */
     font-size: 1.4rem;
     height: 3.2rem !important;
-    /* Fix for issue 45: Removed border radius for buttons */
-    border-radius: 3px;
 }
 
 .form-input {
@@ -35,24 +35,25 @@ body {
     max-width: 50rem;
 }
 
-div.divider {
-    margin-top: 2rem;
+.divider {
     margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
-div.nav {
+.nav {
     z-index: 300;
 }
 
 .nav-title {
     font-size: 2rem;
     font-weight: bold;
-    vertical-align: middle;
 
     /* Fix for issue 45: Title wraps around if too long */
     overflow: hidden;
-    white-space: nowrap;
+
     text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
 }
 
 .nav-icon {
@@ -62,14 +63,14 @@ div.nav {
 }
 
 .quiz-answer-box {
-    display: block;
-    width: 100%;
     border: .1rem solid #5764c6;
     border-radius: .3rem;
+    display: block;
     font-size: 1.4rem;
     /*height: 3.2rem;*/
-    padding: .7rem 1.5rem;
     margin-top: 5px;
+    padding: .7rem 1.5rem;
+    width: 100%;
 }
 
 .quiz-answer-box-highlight {
@@ -84,10 +85,10 @@ div.nav {
 }
 
 h3 {
-    margin-top: 2rem;
-
     /* Fix for issue 45: Changed root font size in spectre.css 0.3.1 */
     font-size: 3rem !important;
+
+    margin-top: 2rem;
 }
 
 h4 {
