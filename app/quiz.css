@@ -1,5 +1,6 @@
 html {
     font-size: 10px;
+    line-height: 1.2;
 }
 
 body {
@@ -13,9 +14,20 @@ body {
 .btn {
     /* Fix for issue 45: Changed root font size in spectre.css 0.3.1 */
     font-size: 1.4rem;
-    height: 2.8rem;
+    height: 3.2rem !important;
     /* Fix for issue 45: Removed border radius for buttons */
     border-radius: 3px;
+}
+
+.form-input {
+    /* Fix for issue 45: Changed root font size in spectre.css 0.3.1 */
+    font-size: 1.4rem !important;
+    height: 3.2rem !important;
+}
+
+.form-label {
+    /* Fix for issue 45: Changed root font size in spectre.css 0.3.1 */
+    line-height: 1.4rem !important;
 }
 
 .container.grid-480 {
